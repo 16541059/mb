@@ -35,7 +35,8 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text">Dün</span>
-                        <span class="info-box-number">     {{App\Models\Visitor::where("date", Carbon\Carbon::yesterday()->format('Y-m-d'))->count()}}</span>
+                        <span
+                            class="info-box-number">     {{App\Models\Visitor::where("date", Carbon\Carbon::yesterday()->format('Y-m-d'))->count()}}</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -77,19 +78,22 @@
                     <!-- /.card-header -->
                     <div class="card-body">
                         @foreach($register as $row)
-                        <div class="callout callout-info">
-                            <div class="row">
-                                <div class="col-md-10">
-                                    <h5>{{$row["name"]}}</h5>
-                                    <p>{{$row["mail"]}} /{{$row["tel"]}} </p>
-                                </div>
-                                <div class="col-md-2">
-                                    <button  class="btn btn-warning"  data-toggle="modal" data-target="#exampleModal"  onclick="getmessage('{{$row["id"]}}','{{route("admin.onkayit.post")}}')" class="btn btn-warning" ><i class="fas fa-edit"></i> Detay</button>
+                            <div class="callout callout-info">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <h5>{{$row["name"]}}</h5>
+                                        <p>{{$row["mail"]}} /{{$row["tel"]}} </p>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"
+                                                onclick="getmessage('{{$row["id"]}}','{{route("admin.onkayit.post")}}')"
+                                                class="btn btn-warning"><i class="fas fa-edit"></i> Detay
+                                        </button>
 
+                                    </div>
                                 </div>
+
                             </div>
-
-                        </div>
                         @endforeach
                     </div>
                     <!-- /.card-body -->
@@ -114,7 +118,10 @@
                                         <p>{{$row["email"]}} /{{$row["tel"]}} </p>
                                     </div>
                                     <div class="col-md-2">
-                                        <button  class="btn btn-warning"  data-toggle="modal" data-target="#exampleModal"  onclick="getmessage('{{$row["id"]}}','{{route("admin.contact.getmessage")}}')"  class="btn btn-warning" ><i class="fas fa-edit"></i> Oku</button>
+                                        <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"
+                                                onclick="getmessage('{{$row["id"]}}','{{route("admin.contact.getmessage")}}')"
+                                                class="btn btn-warning"><i class="fas fa-edit"></i> Oku
+                                        </button>
 
                                     </div>
                                 </div>
@@ -148,7 +155,10 @@
                                         <p>{{$row["email"]}} /{{$row["tel"]}} </p>
                                     </div>
                                     <div class="col-md-2">
-                                        <button  class="btn btn-warning"  data-toggle="modal" data-target="#exampleModal" onclick="getmessage('{{$row["id"]}}','{{route("admin.resultplacement.post")}}')" class="btn btn-warning" ><i class="fas fa-edit"></i> Detay</button>
+                                        <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"
+                                                onclick="getmessage('{{$row["id"]}}','{{route("admin.resultplacement.post")}}')"
+                                                class="btn btn-warning"><i class="fas fa-edit"></i> Detay
+                                        </button>
 
                                     </div>
                                 </div>
@@ -162,19 +172,23 @@
             </div>
             <div class="col-md-6">
                 <div class="card bg-gradient-primary">
-                        <div>
-                           
-                 </div>
+
+                    <div>
+
+
+                        {!!(isset(json_decode($about[0]["sosial"])->maps)?(json_decode($about[0]["sosial"])->maps):"") !!}
+                    </div>
 
 
                 </div>
                 <!-- /.card -->
             </div>
         </div>
-        <div class="modal fade bd-example-modal-xl" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl"   role="document">
+        <div class="modal fade bd-example-modal-xl" id="exampleModal" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
 
-                <div  class="modal-content">
+                <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLongTitle">Detay</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -197,15 +211,15 @@
 
 @section('js')
     <script>
-        getmessage=(id,route)=>{
+        getmessage = (id, route) => {
             $.ajax({
                 url: route,
                 type: 'POST',
-                data: {"id":id},
+                data: {"id": id},
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                dataType : 'html',
+                dataType: 'html',
                 success: function (data) {
                     $("#modal-body").html(data);
 
@@ -216,7 +230,7 @@
 
     </script>
     <style>
-        iframe{
+        iframe {
             width: 100%;
             height: 610px;
         }
