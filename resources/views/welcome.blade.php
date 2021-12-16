@@ -1,100 +1,122 @@
 @extends("front.layout.base")
 @section("title")
-    İngilizce Kursu
+    Amerikan Kultur
 @endsection
 
 @section("content")
 
-    <!-- End Main Header -->
 
+    <div class="banner-area-two three">
+        <div class="banner-slider owl-theme owl-carousel">
 
-    <!-- Banner Section Three -->
-    <section class="banner-section-three">
-        <div class="main-slider-carousel owl-carousel owl-theme">
-            @foreach($slider as $row )
-                <div class="slide" style="background-image: url({{$row["images"]}})">
-                    <div class="color-layer"></div>
-                    <div class="pattern-layer-one"
-                         style="background-image: url({{asset('front/images/main-slider/pattern-2.png')}});background-repeat:no-repeat;">
-                    </div>
-                    <div class="auto-container">
-                        <!-- Content Column -->
-                        <div class="content-column clearfix">
-                            <div class="inner-column">
-                                <h1>{{$row["name"]}}</h1>
-                                <div class="text">{{$row["title"]}}
-                                </div>
-
+            @foreach($slider as $row)
+            <div class="banner-slider-item banner-img-four" style="background-image: url('{{url($row["images"])}}')">
+                <div class="d-table">
+                    <div class="d-table-cell">
+                        <div class="container">
+                            <div class="banner-content">
+                                <h1> {{$row["name"]}} </h1>
+                                <p> {{$row["title"]}} </p>
+                             {{--   <div class="banner-btn-area">
+                                    <a class="common-btn banner-btn" href="#">Get Start A Fundraising</a>
+                                    <a class="common-btn" href="#">Donate Now</a>
+                                </div>--}}
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
             @endforeach
-
-
         </div>
-    </section>
-    <!-- End Banner Section Two -->
+    </div>
 
-    <!-- Services Section Three -->
-    <section class="services-section-three margin-top">
-        <div class="auto-container">
-            <div class="inner-container">
-                <div class="row clearfix">
 
-                    <!-- Service Block Three -->
-                    <div class="service-block-three col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="content">
-                                <div class="service-number">01</div>
-                                <h4><a href="#">EUROPASS</a></h4>
-                                <div class="text">Üniversiteden mezun olduktan sonra Europass belgesi ile öğrencilerine
-                                    iş imkanı sunabilen ülkemizdeki tek dil kursu zinciridir.
-                                </div>
-                                <a href="#" class="more-detail"></a>
-                            </div>
-                        </div>
+
+    <div class="feature-area two pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="feature-item">
+                        <i class="flaticon-solidarity"></i>
+                        <h3>
+                            <a href="#">EUROPASS</a>
+                        </h3>
+                        <p>Üniversiteden mezun olduktan sonra Europass belgesi ile öğrencilerine iş imkanı sunabilen ülkemizdeki tek dil kursu zinciridir.</p>
+
                     </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="feature-item two">
+                        <i class="flaticon-donation"></i>
+                        <h3>
+                            <a href="#">ÇİFT DİPLOMA</a>
+                        </h3>
+                        <p>Amerika Birleşik Devletleri’nin Ortaokul Ve Lise Düzeyinde En Popüler Eğitim Sistemleri Arasındadır .</p>
 
-                    <!-- Service Block Three -->
-                    <div class="service-block-three col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="content">
-                                <div class="service-number">02</div>
-                                <h4><a href="#">ÇİFT DİPLOMA</a></h4>
-                                <div class="text">Amerika Birleşik Devletleri’nin Ortaokul Ve Lise Düzeyinde
-                                    En Popüler Eğitim Sistemleri Arasındadır
-                                    .
-                                </div>
-                                <br>
-
-                            </div>
-                        </div>
                     </div>
+                </div>
+                <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
+                    <div class="feature-item three">
+                        <i class="flaticon-love"></i>
+                        <h3>
+                            <a href="#">ONLINE TESOL</a>
+                        </h3>
+                        <p>Ana dili İngilizce olmayan kişilere İngilizce öğretme yetkinliğini gösterir bir belge alınmasını sağlayan kursun kısaltılmış adıdır..</p>
 
-                    <!-- Service Block Three -->
-                    <div class="service-block-three col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="content">
-                                <div class="service-number">03</div>
-                                <h4><a href="#">ONLINE TESOL</a></h4>
-                                <div class="text">Ana dili İngilizce olmayan kişilere
-                                    İngilizce öğretme yetkinliğini gösterir bir belge alınmasını sağlayan kursun
-                                    kısaltılmış adıdır
-                                    .
-                                </div>
-
-                            </div>
-                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
-    </section>
-    <!-- End Services Section Three -->
+    </div>
+
+
+
 
     @if(!empty($about) )
+
+        <div class="about-area two pb-70">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about-content">
+                            <div class="section-title">
+                                <span class="sub-title">Hakkımızda</span>
+                                <h2>{{$about[0]["name"]}}</h2>
+                            </div>
+                            <p>
+                                {!!  mb_substr(strip_tags($about[0]["about"]) ,0,1000)  !!}...
+                            </p>
+                            <div class="about-btn-area">
+
+                                <a class="common-btn" href="{{route("about.index")}}">Daha Fazla</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-img">
+                            <img src="{{$about[0]["image"]}}" alt="About">
+                            <div class="video-wrap">
+                                @php
+                                if(isset(json_decode($about[0]["sosial"])->video)){
+                                 $video_id= explode("=",(json_decode($about[0]["sosial"])->video));
+
+                        }
+                                @endphp
+                                <button class="js-modal-btn" data-video-id="{{isset(json_decode($about[0]["sosial"])->video)?(end($video_id)):""}}">
+                                    <i class="icofont-ui-play"></i>
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
         <section class="about-section">
             <div class="auto-container">
                 <!-- Sec Title -->

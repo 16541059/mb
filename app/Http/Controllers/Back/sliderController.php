@@ -72,7 +72,7 @@ class sliderController extends Controller
             'name.required'=>'İsim alanı gerekli',
             'title.required'=>'Başlık alanı gerekli',
         ]);
-        $all["images"]= imageUpload::singleUpload("slider",$request->file("images"),1920,1000);
+        $all["images"]= imageUpload::singleUpload("slider",$request->file("images"),1920,800);
         $w=Slider::create($all);
         return redirect()->back()->with(['status'=>'Başarılı', 'msg'=> 'Slider Eklendi','type'=>'bg-success']);
     }
@@ -101,7 +101,7 @@ class sliderController extends Controller
 
         ]);
         $w =Slider::where("id",$id)->get();
-        $all["images"]= imageUpload::singleUploadUpdate("slider",$request->file("images"),$w,"images",1920,1000);
+        $all["images"]= imageUpload::singleUploadUpdate("slider",$request->file("images"),$w,"images",1920,800);
         $update=Slider::where("id",$id)->update($all);
         if($update){
             return redirect()->back()->with(['status'=>'Başarılı', 'msg'=> 'Öğe Güncellendi','type'=>'bg-success']);
