@@ -6,45 +6,58 @@
 @section("content")
 
     <!--Page Title-->
-    <section class="page-title">
-        <div class="pattern-layer-one" style="background-image: url({{asset("front/images/background/pattern-16.png")}})"></div>
-        <div class="auto-container">
-            <h2>DİLLER</h2>
-            <ul class="page-breadcrumb">
-                <li><a href="/">Anasayfa</a></li>
-                <li>Diller</li>
-            </ul>
-        </div>
-    </section>
+
     <!--End Page Title-->
-
+    <div class="page-title-area title-bg-one">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="title-item">
+                        <h2>Diller</h2>
+                        <ul>
+                            <li>
+                                <a href="{{route("index")}}">Ana Sayfa</a>
+                            </li>
+                            <li>
+                                <span>Diller</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Services Page Section -->
-    <section class="services-page-section">
-        <div class="auto-container">
-            <div class="row clearfix">
 
-                <!-- News Block Three -->
+    <section class="blog-area three ptb-100">
+        <div class="container">
+            <div class="row">
+
                 @foreach($data as $row)
-                    <div class="news-block-three col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
-                                <a href="{{route("language.detail",$row["slug"])}}"><img src="{{$row["image"]}}" alt="" /></a>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="blog-item">
+                            <div class="top">
+                                <a href="{{route("language.detail",$row["slug"])}}">
+                                    <img src="{{$row["image"]}}" alt="Blog">
+                                </a>
                             </div>
-                            <div class="lower-content">
+                            <div class="bottom">
 
-                                <h4><a href="{{route("language.detail",$row["slug"])}}">{{$row["title"]}}</a></h4>
-                                <div class="text">
-                                    {!!  mb_substr(strip_tags($row["description"]) ,0,120)  !!}...
-                                </div>
-                                <a class="read-more" href="{{route("language.detail",$row["slug"])}}">Detaylı Bilgi<span class="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>
-
+                                <h3>
+                                    <a href="{{route("language.detail",$row["slug"])}}">{{$row["title"]}}</a>
+                                </h3>
+                                <p> {!!  mb_substr(strip_tags($row["description"]) ,0,120)  !!}...</p>
+                                <a class="blog-btn" href="{{route("language.detail",$row["slug"])}}">Detay</a>
                             </div>
                         </div>
                     </div>
                 @endforeach
+
             </div>
+
         </div>
     </section>
-    <!-- End Services Page Section -->
+
+
 
 @endsection

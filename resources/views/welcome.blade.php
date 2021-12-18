@@ -112,168 +112,76 @@
                 </div>
             </div>
         </div>
+        @endif
 
 
 
-
-
-        <section class="about-section">
-            <div class="auto-container">
-                <!-- Sec Title -->
-                <div class="sec-title">
-                    <div class="title">Hakkımızda</div>
-                    <h2>{{$about[0]["name"]}}</h2>
-                </div>
-                <div class="row clearfix">
-
-                    <!-- Content Column -->
-                    <div class="content-column col-lg-6 col-md-12 col-sm-12">
-                        <div class="inner-column">
-                            <div class="text">
-                                {!!  mb_substr(strip_tags($about[0]["about"]) ,0,1000)  !!}...
-                            </div>
-                            <div class="blocks-outer">
-
-
-                            </div>
-
-                            <a href="{{isset(json_decode($about[0]["sosial"])->video)?(json_decode($about[0]["sosial"])->video):""}}"
-                               class="lightbox-image theme-btn btn-style-one"><span class="txt"><i
-                                        class="play-icon"><img src="{{asset("front/images/icons/play-icon.png")}}"
-                                                               alt=""/></i>&ensp; intro Video</span></a>
-
-                        </div>
-                    </div>
-
-                    <!-- Images Column -->
-                    <div class="images-column col-lg-6 col-md-12 col-sm-12">
-                        <div class="inner-column"
-                             style="background-image: url({{asset("front/images/icons/globe.png")}} )">
-                            <div class="pattern-layer"
-                                 style="background-image: url({{asset("front/images/background/pattern-1.png")}})"></div>
-                            <div class="images-outer parallax-scene-1">
-                                <div class="image" data-depth="0.10">
-                                    <img src="{{$about[0]["image"]}}" alt=""/>
-                                </div>
-                                <div class="image-two" data-depth="0.30">
-                                    <img style="border-radius: 50%" src="{{asset("front/images/resource/about-2.jpg")}}"
-                                         alt=""/>
-                                </div>
-                                <div class="image-three" data-depth="0.20">
-                                    <img style="border-radius: 50%" src="{{asset("front/images/resource/about-3.jpg")}}"
-                                         alt=""/>
-                                </div>
-                                <div class="image-four" data-depth="0.30">
-                                    <img style="border-radius: 50%" src="{{asset("front/images/resource/about-4.jpg")}}"
-                                         alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="{{route("about.index")}}" class="learn"><span
-                                class="arrow flaticon-long-arrow-pointing-to-the-right"></span>Hakkımızda Daha
-                            Fazlası</a>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-    @endif
-    <!--Sponsors Section-->
-    <!-- Featured Section -->
-    <section class="featured-section">
-        <div class="auto-container">
-            <div class="row clearfix">
-
-                <!-- Featured Block Two -->
-                <div class="feature-block-two col-lg-6 col-md-12 col-sm-12">
-                    <div class="inner-box wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms"
-                         style="background-image: url({{asset("front/images/resource/feature-1.jpg")}});">
-                        <div class="text"><b>İNGİLİZCE SEVİYENİZİ MERAK EDİYORSANIZ, UZMAN KADROMUZ SİZİN İÇİN
-                                DEĞERLENDİRSİN!</b></div>
-                        <div style="text-align: center; solid">
-                            <br><a href="{{route("placement.index")}}" class="theme-btn btn-style-two center "><span class="txt">SEVİYE TESPİT SINAVI</span></a><br>
-                        </div>
+    <div class="feature-area pt-100 pb-70" style="background-color: #ffffff">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-6" >
+                    <div class="feature-item" style="background-color:{{$color}}" >
+                        <i class="fas fa-level-up-alt"></i>
+                  {{--      <h3>
+                            <a href="#">Be a volunteer</a>
+                        </h3>--}}
+                        <p><b>İNGİLİZCE SEVİYENİZİ MERAK EDİYORSANIZ, UZMAN KADROMUZ SİZİN İÇİN
+                                DEĞERLENDİRSİN!</b></p>
+                        <a class="feature-btn" href="{{route("placement.index")}}">Seviye Tespit Sınavı</a>
                     </div>
                 </div>
-
-                <!-- Featured Block Two -->
-                <div class="feature-block-two col-lg-6 col-md-12 col-sm-12">
-                    <div class="inner-box wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms"
-                         style="background-image: url({{asset("front/images/resource/feature-2.jpg")}});">
-                        <div class="text"><b>HIZLI ÖN KAYIT İÇİN TIKLAYIN! SİZE EN UYGUN EĞİTİMİ BERABER BULALIM</b>
-                        </div>
-                        <div style="text-align: center; solid">
-                            <br><a href="{{route("registration.index")}}" class="theme-btn btn-style-two center "><span class="txt">ÖN KAYIT FORMU</span></a><br>
-                        </div>
+                <div class="col-sm-6 col-lg-6">
+                    <div class="feature-item two" style="background-color:{{$redcolor}}">
+                        <i class="fas fa-edit"></i>
+                        {{--     <h3>
+                            <a href="#">Donate now</a>
+                        </h3>--}}
+                        <p><b>HIZLI ÖN KAYIT İÇİN TIKLAYIN! SİZE EN UYGUN EĞİTİMİ BERABER BULALIM</b></p>
+                        <a class="feature-btn" href="{{route("registration.index")}}">Ön Kayıt Formu</a>
                     </div>
                 </div>
 
             </div>
         </div>
-    </section>
-    <!-- End Featured Section -->
+    </div>
 
-    <!-- Services Section -->
-    <section class="services-section margin-top">
-        <div class="pattern-layer"
-             style="background-image: url({{asset("front/images/background/pattern-2.png")}})"></div>
-        <div class="auto-container">
-            <!-- Sec Title -->
+    @if(!empty($egitim))
+    <section class="donations-area three pt-100 pb-70">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-title"></span>
+                <h2>Eğitimlerimiz</h2>
 
-
-        </div>
-    </section>
-    <section class="services-section-two margin-top">
-        <div class="auto-container">
-            <div class="upper-box" style="background-color: #29235c">
-                <div class="icon-one" style="background-image: url({{asset("front/images/icons/icon-1.png")}})"></div>
-                <div class="icon-two" style="background-image: url({{asset("front/images/icons/icon-2.png")}})"></div>
-                <div class="icon-three" style="background-image: url({{asset("front/images/icons/icon-3.png")}})"></div>
-                <!-- Sec Title -->
-                <div class="sec-title light centered">
-                    <div class="title"></div>
-                    <h2>EĞİTİMLERİMİZ</h2>
-                </div>
             </div>
-            <div class="inner-container">
-                <div class="row clearfix">
+            <div class="row">
+                @foreach($egitim as $row)
+                <div class="col-sm-6 col-lg-4">
+                    <div class="donation-item">
+                        <div class="top">
 
-                    <!-- Service Block Two -->
-                    @if(!empty($egitim))
-                        @foreach($egitim as $row)
-                            <div class="service-block-two col-lg-4 col-md-6 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="shape-one"></div>
-                                    <div class="shape-two"></div>
-                                    <div class="icon-box">
-                                        <span class="icon icon fa fa-book"></span>
-                                    </div>
-                                    <h5><a href="{{route("service.detail",$row["slug"])}}">{{$row["name"]}}</a></h5>
-                                    <div class="text">
-                                        {!!  mb_substr( strip_tags($row["description"]) ,0,120)  !!}...
-                                    </div>
+                            <h3>
+                                <a href="{{route("service.detail",$row["slug"])}}">{{$row["name"]}}</a>
+                            </h3>
+                            <p>    {!!  mb_substr( strip_tags($row["description"]) ,0,100)  !!}...</p>
+                        </div>
+                        <div class="img">
+                            <img src="{{$row["image"]}}" alt="">
+                            <a class="common-btn" style="background-color: {{$redcolor}}" href="{{route("service.detail",$row["slug"])}}">Detay</a>
+                        </div>
 
-                                </div>
-
-                            </div>
-                        @endforeach
-                    @endif
-
+                    </div>
                 </div>
-                <div class="btn-box">
-                    <a href="{{route("service.index",["egitimlerimiz"])}}" class="theme-btn btn-style-one"><span
-                            class="txt">TÜM HİZMETLER</span></a>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </section>
+@endif
 
 
-
-    <section class="call-to-action-section"
-             style="background-image: url({{asset("front/images/background/pattern-16.png")}})">
-        <div class="auto-container">
-            <div class="row clearfix">
+    <section class="feature-area container pt-100 pb-70  feature-item two "  style="background-color: {{$color}}">
+        <div class="container">
+            <div class="row">
                 <!-- Heading Column -->
                 <div class="heading-column col-lg-8 col-md-12 col-sm-12">
                     <div class="inner-column">
@@ -283,134 +191,138 @@
                     </div>
                 </div>
                 <!-- Button Column -->
-                <div class="button-column col-lg-4 col-md-12 col-sm-12">
-                    <div class="inner-column">
-                        <a href="{{route("registration.index")}}" class="theme-btn btn-style-two"><span class="txt">Ön Kayıt</span></a>
-                        <a href="{{route("placement.index")}}" class="theme-btn btn-style-two"><span class="txt">Teste Katıl</span></a>
-
-                    </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                        <a href="{{route("registration.index")}}" class="feature-btn"><span class="txt">Ön Kayıt</span></a>
+                        <a href="{{route("placement.index")}}" class="feature-btn"><span class="txt">Teste Katıl</span></a>
                 </div>
             </div>
         </div>
     </section>
+
+
     @if(!empty($sinavingilizcesi))
-        <section class="pricing-section">
-            <div class="pattern-layer-one"
-                 style="background-image: url({{asset("front/images/background/pattern-11.jpg")}})"></div>
-            <div class="pattern-layer-two"
-                 style="background-image: url({{asset("front/images/background/pattern-12.jpg")}})"></div>
-            <div class="auto-container">
 
-                <!-- Sec Title -->
-                <div class="sec-title centered">
-                    <div class="title">İNGİLİZ Kültür</div>
-                    <h2>Sınav İngilizcesi</h2>
-                </div>
-                <div class="row clearfix">
+    <div class="benefit-area container three pt-100 pb-70">
+        <div class="container">
+            <div class="section-title">
 
-                    <!-- Price Block -->
-
-                    @foreach($sinav as $row )
-                        <div class="price-block col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <h3 style="text-align:center">{{$row["name"]}}</h3>
-                                <div class="text">
-                                    <p>{!!  mb_substr(strip_tags($row["description"]) ,0,120)  !!}...</p></div>
-
-                                <div class="btn-box">
-                                    <a href="{{route("service.detail",$row["slug"])}}"
-                                       class="theme-btn btn-style-one"><span class="txt">Detaylı Bilgi</span></a>
-                                </div>
-
-                            </div>
-                        </div>
-                @endforeach
-
-                <!-- Price Block -->
-
-                </div>
-                <div class="btn-box">
-                    <a href="{{route("service.index",[$sinavingilizcesi[0]["slug"]])}}" class="theme-btn btn-style-one"><span
-                            class="txt">TÜM HİZMETLER</span></a>
-                </div>
+                <h2>Sınav İngilizcesi</h2>
 
             </div>
-        </section>
-    @endif
-
-    @if(!empty($kampanya))
-
-        <section class="news-section-four">
-            <div class="image-layer"
-                 style="background-image: url({{asset("front/images/background/pattern-19.png")}})"></div>
-            <div class="auto-container">
-                <!-- Sec Title -->
-                <div class="sec-title light centered">
-                    <div class="title">Ingiliz Kültür</div>
-                    <h2>Duyuru & Kampanyalar</h2>
-                </div>
-
-                <div class="row clearfix">
-
-                    <!-- News Block -->
-                    @foreach($kampanya as $row)
-                        <div class="news-block-four col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <div class="image">
-                                    <a href="{{route("campaing.detail",$row["slug"])}}"><img src="{{$row["image"]}}"
-                                                                                             alt=""/></a>
-                                </div>
-                                <div class="lower-content">
-                                    <div
-                                        class="post-date"> {{ $datetime->parse($row["updated_at"])->formatLocalized('%d') }}
-                                        <span>
-                                    {{  mb_substr( $datetime->parse($row["updated_at"])->formatLocalized('%B') ,0,3)  }}
-                                </span></div>
-                                    <h4><a href="{{route("campaing.detail",$row["slug"])}}">{{$row["title"]}}</a></h4>
-                                    <div class="text">
-                                        {!! mb_substr( $row["description"] ,0,120)  !!}...
-                                    </div>
-                                    <a class="" href="{{route("campaing.detail",$row["slug"])}}">Detaylı Bilgi</a>
-
-                                </div>
-                            </div>
+            <div class="row">
+                @foreach($sinav as $row )
+                <div class="col-sm-6 col-lg-3">
+                    <div class="benefit-item">
+                        <i class="fas fa-feather-alt"></i>
+                        <h3>{{$row["name"]}}</h3>
+                        <p>{!!  mb_substr(strip_tags($row["description"]) ,0,120)  !!}...</p>
+                        <div class="img">
+                            <a class="common-btn" style="background-color: {{$redcolor}}" href="{{route("service.detail",$row["slug"])}}">Detay</a>
                         </div>
-                    @endforeach
-                </div>
-
-            </div>
-        </section>
-
-    @endif
-    <!--Sponsors Section-->
-    @if(!empty($referans))
-        <section class="sponsors-section style-three news-section-four">
-            <div class="auto-container">
-                <!-- Sec Title -->
-                <div class="sec-title">
-                    <div class="clearfix">
-                        <div class="pull-left">
-                            <div class="title"></div>
-                            <h2>Referanslarımız</h2>
-                        </div>
-
                     </div>
                 </div>
-                <div class="carousel-outer">
-                    <!--Sponsors Slider-->
-                    <ul class="sponsors-carousel owl-carousel owl-theme">
-                        @foreach($referans as $row)
-                            <li>
-                                <div class="image-box"><a href="#"><img src="{{$row["image"]}}" alt=""></a></div>
-                            </li>
-                        @endforeach
+                @endforeach
 
-                    </ul>
+            </div>
+        </div>
+    </div>
+@endif
+
+
+    <!--Sponsors Section-->
+    @if(!empty($kampanya))
+    <section class="blog-area three pt-100 pb-70">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-title">Amerikan Kültür </span>
+
+                <h2>Duyuru & Kampanyalar </h2>
+
+
+            </div>
+            <div class="row">
+
+                @foreach($kampanya as $row)
+                <div class="col-sm-6 col-lg-4">
+                    <div class="blog-item">
+                        <div class="top">
+                            <a href="{{route("campaing.detail",$row["slug"])}}">
+                                <img src="{{$row["image"]}}" alt="Blog">
+                            </a>
+                        </div>
+                        <div class="bottom">
+                            <ul>
+                                <li>
+                                    <i class="icofont-calendar"></i>
+                                    <span>{{ $datetime->parse($row["updated_at"])->formatLocalized('%B %d - %m - %Y') }}</span>
+                                </li>
+
+                            </ul>
+                            <h3>
+                                <a href="{{route("campaing.detail",$row["slug"])}}">{{$row["title"]}}</a>
+                            </h3>
+                            <p>      {!! mb_substr( $row["description"] ,0,120)  !!}...</p>
+                            <a class="blog-btn" href="{{route("campaing.detail",$row["slug"])}}">Detay</a>
+                        </div>
+                    </div>
+                </div>
+
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+@endif
+
+@if(!empty($foto))
+    <section class="gallery-area  container   pt-100 pb-70">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-title">Amerikan Kültür</span>
+                <h2>Fotoğran Galerisi</h2>
+
+            </div>
+            <div class="row">
+                @foreach($foto as $row)
+                <div class="col-sm-6 col-lg-4">
+                    <div class="gallery-item">
+                        <a href="{{$row["image"]}}" data-lightbox="roadtrip">
+                            <img src="{{$row["image"]}}" alt="Gallery">
+                            <i class="icofont-eye"></i>
+                        </a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+@endif
+
+
+    @if(!empty($referans))
+
+
+        <section class="gallery-area  container   pt-100 pb-70">
+            <div class="container">
+                <div class="section-title">
+                    <span class="sub-title">Amerikan Kültür</span>
+                    <h2>Referanslarımız</h2>
+                    <div class="container mb-5">
+
+                        <section class="customer-logos slider">
+                            @foreach($referans as $row)
+
+                                <div class="slide"><img src="{{$row["image"]}}"></div>
+                            @endforeach
+
+                        </section>
+                    </div>
                 </div>
 
             </div>
         </section>
-        <!--End Sponsors Section-->
+
+
     @endif
 
 
@@ -436,6 +348,10 @@
 @endsection
 
 @section("script")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
     <script>
 
 
@@ -453,9 +369,153 @@
 
             @endif
 
-
+                     $(document).ready(function(){
+                         $('.customer-logos').slick({
+                             slidesToShow: 6,
+                             slidesToScroll: 1,
+                             autoplay: true,
+                             autoplaySpeed: 1500,
+                             arrows: false,
+                             dots: false,
+                             pauseOnHover: false,
+                             responsive: [{
+                                 breakpoint: 768,
+                                 settings: {
+                                     slidesToShow: 4
+                                 }
+                             }, {
+                                 breakpoint: 520,
+                                 settings: {
+                                     slidesToShow: 3
+                                 }
+                             }]
+                         });
+                     });
 
 
     </script>
+
+    <style>
+        h2{
+            text-align:center;
+            padding: 20px;
+        }
+        /* Slider */
+
+        .slick-slide {
+            margin: 0px 20px;
+        }
+
+        .slick-slide img {
+            width: 100%;
+        }
+
+        .slick-slider
+        {
+            position: relative;
+            display: block;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
+            -ms-touch-action: pan-y;
+            touch-action: pan-y;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .slick-list
+        {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        .slick-list:focus
+        {
+            outline: none;
+        }
+        .slick-list.dragging
+        {
+            cursor: pointer;
+            cursor: hand;
+        }
+
+        .slick-slider .slick-track,
+        .slick-slider .slick-list
+        {
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .slick-track
+        {
+            position: relative;
+            top: 0;
+            left: 0;
+            display: block;
+        }
+        .slick-track:before,
+        .slick-track:after
+        {
+            display: table;
+            content: '';
+        }
+        .slick-track:after
+        {
+            clear: both;
+        }
+        .slick-loading .slick-track
+        {
+            visibility: hidden;
+        }
+
+        .slick-slide
+        {
+            display: none;
+            float: left;
+            height: 100%;
+            min-height: 1px;
+        }
+        [dir='rtl'] .slick-slide
+        {
+            float: right;
+        }
+        .slick-slide img
+        {
+            display: block;
+        }
+        .slick-slide.slick-loading img
+        {
+            display: none;
+        }
+        .slick-slide.dragging img
+        {
+            pointer-events: none;
+        }
+        .slick-initialized .slick-slide
+        {
+            display: block;
+        }
+        .slick-loading .slick-slide
+        {
+            visibility: hidden;
+        }
+        .slick-vertical .slick-slide
+        {
+            display: block;
+            height: auto;
+            border: 1px solid transparent;
+        }
+        .slick-arrow.slick-hidden {
+            display: none;
+        }
+    </style>
 
 @endsection

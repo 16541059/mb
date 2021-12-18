@@ -14,6 +14,7 @@
     }else{
         $privacglb[0]=[ "kvkk" => "", "cerez" => "", "gizlilik" => ""];
     }
+    $color ="#29235c"
 @endphp
 <!DOCTYPE html>
 <html lang="zxx">
@@ -44,8 +45,9 @@
     <link rel="stylesheet" href="{{asset("front/css/nice-select.min.css")}}">
 
     <link rel="stylesheet" href="{{asset("front/css/style.css")}}">
-
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="stylesheet" href="{{asset("front/css/responsive.css")}}">
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <title>@yield("title")</title>
     <link rel="icon" type="image/png" href="{{asset("front/img/favicon.png")}}">
 </head>
@@ -77,10 +79,10 @@
                             <i class="icofont-ui-call"></i>
                             <a href="tel:{{(isset(json_decode($aboutglb[0]["sosial"])->tel)?(json_decode($aboutglb[0]["sosial"])->tel):"")}}">{{(isset(json_decode($aboutglb[0]["sosial"])->tel)?(json_decode($aboutglb[0]["sosial"])->tel):"")}}</a>
                         </li>
-                        <li>
+                    {{--    <li>
                             <i class="icofont-ui-email"></i>
                             <a href="mailto:{{(isset(json_decode($aboutglb[0]["sosial"])->mail)?(json_decode($aboutglb[0]["sosial"])->mail):"")}}">{{(isset(json_decode($aboutglb[0]["sosial"])->mail)?(json_decode($aboutglb[0]["sosial"])->mail):"")}}</a>
-                        </li>
+                        </li>--}}
                     </ul>
                 </div>
             </div>
@@ -122,16 +124,16 @@
 <div class="navbar-area sticky-top">
 
     <div class="mobile-nav">
-        <a href="index.html" class="logo">
-            <img src="front/img/logo-two.png" alt="Logo">
+        <a href="{{route("index")}}" class="logo">
+            <img src="{{(isset($aboutglb[0]["logo"])?($aboutglb[0]["logo"]):"")}}" alt="Logo">
         </a>
     </div>
 
     <div class="main-nav">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="index.html">
-                    <img src="front/img/logo.png" alt="Logo">
+                <a class="navbar-brand" href="{{route("index")}}">
+                    <img src="{{(isset($aboutglb[0]["logo"])?($aboutglb[0]["logo"]):"")}}" alt="Logo">
                 </a>
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav">
@@ -205,144 +207,173 @@
 
 @yield("content")
 
+
 <footer class="footer-area pt-100">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-lg-4">
                 <div class="footer-item">
                     <div class="footer-logo">
-                        <a class="logo" href="index.html">
-                            <img src="front/img/logo-two.png" alt="Logo">
+                        <a class="logo" href="{{route("index")}}">
+                            <img src="{{(isset($aboutglb[0]["logo"])?($aboutglb[0]["logo"]):"")}}" alt="Logo">
                         </a>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vero, magni est placeat
-                            neque, repellat maxime a dolore</p>
+                        <p>{!! isset($aboutglb[0]["about"])?(mb_substr(strip_tags($aboutglb[0]["about"]) ,0,200)):""    !!}
+                            ...</p>
                         <ul>
                             <li>
-                                <a href="#" target="_blank">
+                                <a href="{{(isset(json_decode($aboutglb[0]["sosial"])->facebook)?(json_decode($aboutglb[0]["sosial"])->facebook):"")}}" target="_blank">
                                     <i class="icofont-facebook"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" target="_blank">
+                                <a href="{{(isset(json_decode($aboutglb[0]["sosial"])->twitter)?(json_decode($aboutglb[0]["sosial"])->twitter):"")}}" target="_blank">
                                     <i class="icofont-twitter"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" target="_blank">
+                                <a href="{{(isset(json_decode($aboutglb[0]["sosial"])->youtube)?(json_decode($aboutglb[0]["sosial"])->youtube):"")}}" target="_blank">
                                     <i class="icofont-youtube-play"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" target="_blank">
+                                <a href="{{(isset(json_decode($aboutglb[0]["sosial"])->instagram)?(json_decode($aboutglb[0]["sosial"])->instagram):"")}}" target="_blank">
                                     <i class="icofont-instagram"></i>
                                 </a>
                             </li>
+                            <li>
+                                <a href="https://wa.me/{{(isset(json_decode($aboutglb[0]["sosial"])->whatsapp)?(json_decode($aboutglb[0]["sosial"])->whatsapp):"")}}" target="_blank">
+                                    <i class="icofont-whatsapp"></i>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-3">
-                <div class="footer-item">
-                    <div class="footer-causes">
-                        <h3>Urgent causes</h3>
-                        <div class="cause-inner">
-                            <ul class="align-items-center">
-                                <li>
-                                    <img src="front/img/footer-thumb1.jpg" alt="Cause">
-                                </li>
-                                <li>
-                                    <h3>
-                                        <a href="donation-details.html">Donate for melina the little child</a>
-                                    </h3>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="cause-inner">
-                            <ul class="align-items-center">
-                                <li>
-                                    <img src="front/img/footer-thumb2.jpg" alt="Cause">
-                                </li>
-                                <li>
-                                    <h3>
-                                        <a href="donation-details.html">Relief for Australia cyclone effected</a>
-                                    </h3>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3">
+
+            <div class="col-sm-6 col-lg-4">
                 <div class="footer-item">
                     <div class="footer-links">
-                        <h3>Quick links</h3>
+                        <h3>Hızlı Linkler</h3>
                         <ul>
                             <li>
-                                <a href="about.html">
+                                <a href="{{route("service.index",["egitimlerimiz"])}}">
                                     <i class="icofont-simple-right"></i>
-                                    About
+                                    Eğitimler
                                 </a>
                             </li>
                             <li>
-                                <a href="blog.html">
+                                <a href="{{route("language.index")}}">
                                     <i class="icofont-simple-right"></i>
-                                    Blog
+                                    Diğer Diller
                                 </a>
                             </li>
                             <li>
-                                <a href="events.html">
+                                <a href="{{route("campaing.index")}}">
                                     <i class="icofont-simple-right"></i>
-                                    Events
+                                    Kampanyalar
                                 </a>
                             </li>
                             <li>
-                                <a href="donation.html">
+                                <a href="{{route("contact.index")}}">
                                     <i class="icofont-simple-right"></i>
-                                    Donation
+                                    İletişim
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route("whyus.index")}}">
+                                    <i class="icofont-simple-right"></i>
+                                    Neden Biz
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-lg-4">
                 <div class="footer-item">
                     <div class="footer-contact">
-                        <h3>Contact info</h3>
+                        <h3>İletişim Bilgilerim</h3>
                         <div class="contact-inner">
                             <ul>
                                 <li>
                                     <i class="icofont-location-pin"></i>
-                                    <a href="#">6B, Helvetica street, Jordan</a>
+                                    <a href="#">{{(isset(json_decode($aboutglb[0]["sosial"])->adres)?(json_decode($aboutglb[0]["sosial"])->adres):"")}}</a>
                                 </li>
                                 <li>
                                     <i class="icofont-ui-call"></i>
-                                    <a href="tel:+123456789">+123-456-789</a>
+                                    <a href="tel:{{(isset(json_decode($aboutglb[0]["sosial"])->tel)?(json_decode($aboutglb[0]["sosial"])->tel):"")}}">{{(isset(json_decode($aboutglb[0]["sosial"])->tel)?(json_decode($aboutglb[0]["sosial"])->tel):"")}}</a>
+                                </li>
+                                <br>
+                                <li>
+                                    <i class="icofont-ui-email"></i>
+                                    <a href="mailto:{{(isset(json_decode($aboutglb[0]["sosial"])->mail)?(json_decode($aboutglb[0]["sosial"])->mail):"")}}">{{(isset(json_decode($aboutglb[0]["sosial"])->mail)?(json_decode($aboutglb[0]["sosial"])->mail):"")}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="contact-inner">
-                            <ul>
-                                <li>
-                                    <i class="icofont-location-pin"></i>
-                                    <a href="#">6A, New street, Spain</a>
-                                </li>
-                                <li>
-                                    <i class="icofont-ui-call"></i>
-                                    <a href="tel:+548658956">+548-658-956</a>
-                                </li>
-                            </ul>
+
+
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
         <div class="copyright-area">
-            <p>Copyright ©2021 Findo. Designed By <a href="../../index.htm" target="_blank">HiBootstrap</a></p>
+            <p>Copyright &copy; 2020 Tüm hakları İngiliz Kültüre aittir. Designed By <a href="https://areswebtasarim.com" target="_blank">Ares Web Tasarım</a></p>
         </div>
     </div>
 </footer>
+<div class="modal fade bd-example-modal-lg1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="privacymodal">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Çerezler</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {!! $privacglb[0]["cerez"] !!}
+            </div>
 
+        </div>
+    </div>
+</div>
+<div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="privacymodal">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Gizlilik Sözleşmesi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {!! $privacglb[0]["gizlilik"] !!}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Search Popup -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="privacymodal">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">KVKK Metni</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {!! $privacglb[0]["kvkk"] !!}
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="go-top">
     <i class="icofont-arrow-up"></i>
@@ -364,6 +395,7 @@
 
 <script src="{{asset("front/js/jquery-modal-video.min.js")}}"></script>
 
+
 <script src="{{asset("front/js/wow.min.js")}}"></script>
 
 <script src="{{asset("front/js/lightbox.min.js")}}"></script>
@@ -378,7 +410,7 @@
 <script src="{{asset("front/js/custom.js")}}"></script>
 </body>
 @yield("script")
-<script>
+{{--<script>
     var button = document.querySelector('.popup'),
         items = document.querySelectorAll('.trigger');
     var openCloseMenu = function() {
@@ -388,7 +420,7 @@
     }
     button.onclick = openCloseMenu;
 
-</script>
+</script>--}}
 </body>
 
 <!-- Mirrored from expert-themes.com/html/globex/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Nov 2021 08:12:51 GMT -->

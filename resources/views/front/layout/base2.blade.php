@@ -14,6 +14,7 @@
     }else{
         $privacglb[0]=[ "kvkk" => "", "cerez" => "", "gizlilik" => ""];
     }
+    $color ="#29235c"
 @endphp
     <!DOCTYPE html>
 <html>

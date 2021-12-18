@@ -7,6 +7,7 @@ use App\Models\Abone;
 use App\Models\About;
 use App\Models\Campaign;
 use App\Models\Category;
+use App\Models\Foto;
 use App\Models\Popup;
 use App\Models\Refrans;
 use App\Models\Slider;
@@ -46,10 +47,10 @@ class HomeController extends Controller
         if(!$w){
             Visitor::create(["ip"=>$request->getClientIp(),"date"=>$datetime->format('Y-m-d') ]);
         }
-
+        $foto=Foto::orderBy("updated_at","Desc")->get()->take(9);
 
         return view('welcome',["slider"=>$slider,"about"=>$about,"egitim"=>$egitim,"referans"=>$referans,
-            "kampanya"=>$kampanya,"datetime"=>$datetime,"sinavingilizcesi"=>$sinavingilizcesi,"sinav"=>$sinav,"popup"=>$popup]);
+            "kampanya"=>$kampanya,"datetime"=>$datetime,"sinavingilizcesi"=>$sinavingilizcesi,"sinav"=>$sinav,"popup"=>$popup,"foto"=>$foto,"color"=>"#29235c","redcolor"=>"#e30613" ]);
     }
 
     public  function  save(Request $request){

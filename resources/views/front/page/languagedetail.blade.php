@@ -6,120 +6,77 @@
 @section("content")
 
     <!--Page Title-->
-    <section class="page-title">
-        <div class="pattern-layer-one" style="background-image: url({{asset("front/images/background/pattern-16.png")}})"></div>
-        <div class="auto-container">
-            <h2>{{($data[0]["title"])}}</h2>
-            <ul class="page-breadcrumb">
-                <li><a href="/">Anasayfa</a></li>
-                <li>{{mb_strtolower($data[0]["title"],"UTF-8")}}</li>
-            </ul>
-        </div>
-    </section>
-
-
-    <!--Sidebar Page Container-->
-    <div class="sidebar-page-container">
-        <div class="auto-container">
-            <div class="row clearfix">
-
-                <!-- Sidebar Side -->
-                <div class="sidebar-side left-sidebar col-lg-4 col-md-12 col-sm-12">
-                    <aside class="sidebar sticky-top">
-
-                        <!-- Services -->
-                        <div class="sidebar-widget">
-                            <ul class="service-list">
-                                @foreach($list as $row)
-                                    <li class="{{$row["slug"]==$data[0]["slug"]?"current":""}}"><a href="{{route("language.detail",$row["slug"])}}"><span class="arrow fa fa-angle-double-right"></span> {{$row["title"]}}</a></li>
-                                @endforeach
-
-                            </ul>
-                        </div>
-
-                        <!-- Contact Widget -->
-                        <div class="sidebar-widget contact-widget">
-                            <div class="widget-content" style="background-image:url({{asset("front/images/resource/service.jpg")}})">
-                                <div class="border-layer"></div>
-                                <div class="icon-box flaticon-phone-call"></div>
-                                <h4>Nasıl yardımcı olabiliriz?</h4>
-                                <div class="text">Herhangi bir yardıma ihtiyacınız olursa, lütfen <br>
-                                    bizimle iletişime geçmekten çekinmeyin..</div>
-                                <ul>
-                                    <li><span class="icon flaticon-call"></span>{{isset(json_decode($about[0]["sosial"])->tel)?(json_decode($about[0]["sosial"])->tel):""}}</li>
-                                    <li><span class="icon flaticon-envelope"></span>{{isset(json_decode($about[0]["sosial"])->mail)?(json_decode($about[0]["sosial"])->mail):""}}</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </aside>
-                </div>
-
-                <!-- Content Side -->
-                <div class="content-side right-sidebar col-lg-8 col-md-12 col-sm-12">
-                    <div class="services-detail">
-                        <div class="inner-box">
-                            <h2>{{$data[0]["title"]}}</h2>
-                            <div class="image" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
-                                <img src="{{$data[0]["image"]}}" alt="" />
-                            </div>
-                            {!! $data[0]["description"] !!}
-                        </div>
+    <div class="page-title-area title-bg-one">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="title-item">
+                        <h2>{{ucwords(mb_strtolower($data[0]["title"],"UTF-8")) }}</h2>
+                        <ul>
+                            <li>
+                                <a href="{{route("index")}}">Ana Sayfa</a>
+                            </li>
+                            <li>
+                                <span>{{ucwords(mb_strtolower($data[0]["title"],"UTF-8")) }}</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
+    <div class="blog-details-area ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="details-item">
+                        <div class="details-img">
+                            <img src="{{$data[0]["image"]}}"  style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;" alt="Details">
 
-    <!-- Info Section -->
-    <section class="info-section" style="background-image: url({{asset("front/images/background/6.jpg")}})">
-        <div class="auto-container">
-            <div class="row clearfix">
+                            <h2>{{$data[0]["title"]}}  </h2>
+                            <p>
+                                {!! $data[0]["description"]  !!}
+                            </p>
 
-                <!-- Logo Column -->
-                <div class="logo-column col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-column">
-                        <div class="logo">
-                            <a href="index-2.html"><img src="images/logo-2.png" alt="" /></a>
                         </div>
+
+
+
                     </div>
                 </div>
+                <div class="col-lg-4">
+                    <div class="widget-area">
 
-                <!-- Info Column -->
-                <div class="info-column col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-column">
-                        <div class="icon-box"><span class="flaticon-pin"></span></div>
-                        <ul>
-                            <li><strong>Address</strong></li>
-                            <li>{{isset(json_decode($about[0]["sosial"])->adres)?(json_decode($about[0]["sosial"])->adres):""}}</li>
-                        </ul>
+                        <div class="post widget-item">
+                            <h3>Diğer Diller</h3>
+                            @foreach($list as $row)
+
+                                <div class="post-inner" >
+
+                                    <ul class="align-items-center">
+                                        <li>
+                                            <a href="{{route("language.detail",$row["slug"])}}">         <img  style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;" src="{{$row["image"]}}" alt="Details">   </a>
+                                        </li>
+                                        <li>
+                                            <h4>
+                                                <a href="{{route("language.detail",$row["slug"])}}">{{$row["title"]}}</a>
+                                            </h4>
+                                            <p><a href="{{route("language.detail",$row["slug"])}}"> {!!  mb_substr(strip_tags($row["description"]) ,0,80)  !!} </a> <a href="{{route("language.detail",$row["slug"])}}" ><i class="fas fa-arrow-right"></i> </a></p>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                            @endforeach
+                        </div>
+
+
                     </div>
                 </div>
-
-                <!-- Info Column -->
-                <div class="info-column col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-column">
-                        <div class="icon-box"><span class="flaticon-phone-call"></span></div>
-                        <ul>
-                            <li><strong>Phone</strong></li>
-                            <li>{{isset(json_decode($about[0]["sosial"])->tel)?(json_decode($about[0]["sosial"])->tel):""}}</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Info Column -->
-                <div class="info-column col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-column">
-                        <div class="icon-box"><span class="flaticon-email-1"></span></div>
-                        <ul>
-                            <li><strong>E-Mail</strong></li>
-                            <li>{{isset(json_decode($about[0]["sosial"])->mail)?(json_decode($about[0]["sosial"])->mail):""}}</li>
-                        </ul>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </section>
+    </div>
+    <!--Sidebar Page Container-->
+
+
 @endsection

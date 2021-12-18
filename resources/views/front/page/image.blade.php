@@ -6,58 +6,47 @@
 @section("content")
 
     <!--Page Title-->
-    <section class="page-title">
-        <div class="pattern-layer-one"
-             style="background-image: url({{asset("front/images/background/pattern-16.png")}})"></div>
-        <div class="auto-container">
-            <h2>FotoĞraf GALERİSİ</h2>
-            <ul class="page-breadcrumb">
-                <li><a href="/">Anasayfa</a></li>
-                <li>Fotoğraf Galerisi</li>
-            </ul>
-        </div>
-    </section>
 
-
-    <section class="gallery-section">
-        <div class="auto-container">
-            <div class="sec-title centered">
-
-                <h2>Galeri</h2>
-            </div>
-
-            <div class="mixitup-gallery">
-                <div class="filters clearfix">
-
-
-
-                </div>
-                <div class=" row clearfix">
-                    @foreach($data  as $row)
-                    <div class="case-block  all ideas technology development col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <img src="{{$row["image"]}}" alt="" />
-                                <div class="overlay-box">
-                                    <a href="{{$row["image"]}}" data-fancybox="gallery" data-caption="" class="search-icon"><span class="icon flaticon-search"></span></a>
-                                    <div class="content">
-                                        <h4><a href="#">{{$row["name"]}}</a></h4>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
+    <div class="page-title-area title-bg-one">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="title-item">
+                        <h2>Fotoğraf Galerisi</h2>
+                        <ul>
+                            <li>
+                                <a href="{{route("index")}}">Ana Safya</a>
+                            </li>
+                            <li>
+                                <span>Fotoğraf Galerisi</span>
+                            </li>
+                        </ul>
                     </div>
-                    @endforeach
                 </div>
-
             </div>
         </div>
-    </section>
-@endsection
-@section("script")
+    </div>
+
+    <div class="gallery-area ptb-100">
+        <div class="container">
+            <div class="row">
+                @foreach($data  as $row)
+                <div class="col-sm-6 col-lg-4">
+                    <div class="gallery-item">
+                        <a href="{{$row["image"]}}" data-lightbox="roadtrip">
+                            <img src="{{$row["image"]}}" alt="Gallery">
+                            <i class="icofont-eye"></i>
+                        </a>
+                    </div>
+                </div>
+                @endforeach
+
+            </div>
+
+        </div>
+    </div>
 
 
-    <script src="{{asset("front/js/mixitup.js")}}"></script>
+
 @endsection
+

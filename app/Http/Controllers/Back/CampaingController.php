@@ -36,7 +36,7 @@ class CampaingController extends Controller
             'title.required' => 'Başlık alanı gerekli',
         ]);
         $all["slug"]=mHelper::slug($all["title"]);
-        $all["image"] = imageUpload::singleUpload("campaing", $request->file("image"), 670, 500);
+        $all["image"] = imageUpload::singleUpload("campaing", $request->file("image"), 860, 500);
         $w = Campaign::create($all);
         return redirect()->back()->with(['status' => 'Başarılı', 'msg' => 'Kampanya Eklendi', 'type' => 'bg-success']);
     }
@@ -86,7 +86,7 @@ class CampaingController extends Controller
         ]);
         $w =Campaign::where("id",$id)->get();
         $all["slug"]=mHelper::slug($all["title"]);
-        $all["image"]= imageUpload::singleUploadUpdate("campaing",$request->file("image"),$w,"image",670,500);
+        $all["image"]= imageUpload::singleUploadUpdate("campaing",$request->file("image"),$w,"image",860,500);
         $update=Campaign::where("id",$id)->update($all);
         if($update){
             return redirect()->back()->with(['status'=>'Başarılı', 'msg'=> 'Öğe Güncellendi','type'=>'bg-success']);

@@ -13,7 +13,12 @@ class WhyusController extends Controller
     public  function  index(){
 
        $data= Whyus::all();
-        return view("front.page.whyus",["data"=>$data]);
+        if (About::where("id",1)->count()){
+            $about=About::where("id",1)->get();
+        }else{
+            $about[0]=["sosial"=>"","name"=>"","about"=>"","image"=>""];
+        }
+        return view("front.page.whyus",["data"=>$data,"about"=>$about]);
     }
 
 }

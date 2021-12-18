@@ -4,17 +4,28 @@
     <x-guest-layout>
 
     </x-guest-layout>
-    <section class="page-title">
-        <div class="pattern-layer-one"
-             style="background-image: url({{asset("front/images/background/pattern-16.png")}})"></div>
-        <div style="font-size: 40px" class="auto-container">
-            <h2>Şifremi Unuttum</h2>
-            <ul class="page-breadcrumb">
-                <li><a href="/">Anasayfa</a></li>
-                <li>Şifremi Unuttum</li>
-            </ul>
+    <div class="page-title-area title-bg-one">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="title-item">
+                        <h2>Şifremi Unuttum</h2>
+                        <ul>
+                            <li>
+                                <a href="{{route("index")}}">Ana Sayfa</a>
+                            </li>
+                            <li>
+                                <span>Şifremi Unuttum</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+
+
+
     <section class="register-section">
         <div class="auto-container">
             <div class="row clearfix">
@@ -33,18 +44,17 @@
                         @endif
                             <form method="POST" action="{{ route('password.email') }}">
                                 @csrf
-                                <div class="mb-4 text-sm text-gray-600">
+                                <div class="mt-3 mb-4 text-lg ">
                                     {{ __('Parolanızı mı unuttunuz?  Sorun yok.  Sadece bize e-posta adresinizi bildirin, size yeni bir tane seçmenize izin verecek bir şifre sıfırlama bağlantısını e-posta ile gönderelim.') }}
                                 </div>
                                 <div class="block">
                                     <x-jet-label for="email" value="{{ __('Email') }}" />
-                                    <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                                    <x-jet-input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus />
                                 </div>
 
-                                <div class="flex items-center justify-end mt-4">
-                                    <x-jet-button>
-                                        {{ __('Şifre Sıfırlama Linki Gönder') }}
-                                    </x-jet-button>
+                                <div class="flex items-center justify-end mt-4 mb-4">
+
+                                    <button type="submit" class="btn common-btn">Şifre Sıfırlama Linki Gönder</button>
                                 </div>
                             </form>
                     </div>

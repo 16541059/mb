@@ -36,7 +36,7 @@ class CategoryController extends Controller
             'image.mimes'=>'Görsel dosya biçimi jpg, png, jpeg, gif, svg olmalıdır',
             'description.required'=>'İçerik alanı gerekli',
         ]);
-        $all["image"]= imageUpload::singleUpload("egitim",$request->file("image"),763,569);
+        $all["image"]= imageUpload::singleUpload("egitim",$request->file("image"),800,580);
         $all["slug"]=mHelper::slug($all["name"]);
         $w=Category::create($all);
         return redirect()->back()->with(['status'=>'Başarılı', 'msg'=> 'Öğe Eklendi','type'=>'bg-success']);
@@ -81,7 +81,7 @@ class CategoryController extends Controller
             'description.required'=>'İçerik alanı gerekli',
         ]);
         $w =Category::where("id",$id)->get();
-        $all["image"]= imageUpload::singleUploadUpdate("egitim",$request->file("image"),$w,"image",763,569);
+        $all["image"]= imageUpload::singleUploadUpdate("egitim",$request->file("image"),$w,"image",800,580);
         $all["slug"]=mHelper::slug($all["name"]);
         $update=Category::where("id",$id)->update($all);
         if($update){

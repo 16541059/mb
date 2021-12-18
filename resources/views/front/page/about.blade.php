@@ -4,105 +4,232 @@
 @endsection
 
 @section("content")
-
-    <!--Page Title-->
-    <section class="page-title">
-        <div class="pattern-layer-one"
-             style="background-image: url({{asset("front/images/background/pattern-16.png")}})"></div>
-        <div class="auto-container">
-            <h2>Hakkımızda</h2>
-            <ul class="page-breadcrumb">
-                <li><a href="/">Anasayfa</a></li>
-                <li>Hakkımızda</li>
-            </ul>
+    <div class="page-title-area title-bg-one">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="title-item">
+                        <h2>Hakkımızda</h2>
+                        <ul>
+                            <li>
+                                <a href="{{route("index")}}">Ana Safya</a>
+                            </li>
+                            <li>
+                                <span>Hakkımızda</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
 
     @if(!empty($about) )
-    <section class="about-section mt-3">
-        <div class="auto-container">
-            <!-- Sec Title -->
-            <div class="sec-title mt-3">
-                <div class="title">Hakkımızda</div>
-                <h2>{{$about[0]["name"]}}</h2>
-            </div>
-            <div class="row clearfix">
-
-                <!-- Content Column -->
-                <div class="content-column col-lg-6 col-md-12 col-sm-12">
-                    <div class="inner-column">
-                        <div class="text">
-                            {!! $about[0]["about"] !!}
-                            </div>
-                        <div class="blocks-outer">
-
-
-
-                            <!-- Feature Block -->
-                            <div class="feature-block">
-
-                            </div>
-
+    <div class="about-area pt-100 pb-70">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-img">
+                        <img src="{{$about[0]["image"]}}" alt="About">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <div class="section-title">
+                            <span class="sub-title">Hakkımızda</span>
+                            <h2>{{$about[0]["name"]}}</h2>
                         </div>
 
-                        <a href="{{isset(json_decode($about[0]["sosial"])->video)?(json_decode($about[0]["sosial"])->video):""}}" class="lightbox-image theme-btn btn-style-one"><span class="txt"><i class="play-icon"><img src="{{asset("front/images/icons/play-icon.png")}}" alt="" /></i>&ensp; intro Video</span></a>
+                        <p>   {!! $about[0]["about"] !!}</p>
 
                     </div>
                 </div>
-
-                <!-- Images Column -->
-                <div class="images-column col-lg-6 col-md-12 col-sm-12">
-                    <div class="inner-column" style="background-image: url({{asset("front/images/icons/globe.png")}} )">
-                        <div class="pattern-layer" style="background-image: url({{asset("front/images/background/pattern-1.png")}})"></div>
-                        <div class="images-outer parallax-scene-1">
-                            <div class="image" data-depth="0.10">
-                                <img  src="{{$about[0]["image"]}}" alt="" />
-                            </div>
-                            <div class="image-two" data-depth="0.30">
-                                <img style="border-radius: 50%" src="{{asset("front/images/resource/about-2.jpg")}}" alt="" />
-                            </div>
-                            <div class="image-three" data-depth="0.20">
-                                <img style="border-radius: 50%"  src="{{asset("front/images/resource/about-3.jpg")}}" alt="" />
-                            </div>
-                            <div class="image-four" data-depth="0.30">
-                                <img style="border-radius: 50%"  src="{{asset("front/images/resource/about-4.jpg")}}" alt="" />
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
             </div>
         </div>
-    </section>
-    <!-- End About Section -->
+    </div>
+
+
 
 @endif
     @if(!empty($referans))
-        <section class="sponsors-section style-three news-section-four">
-            <div class="auto-container">
-                <!-- Sec Title -->
-                <div class="sec-title">
-                    <div class="clearfix">
-                        <div class="pull-left">
-                            <div class="title"></div>
-                            <h2>Referanslarımız</h2>
-                        </div>
+        <section class="gallery-area  container   pt-100 pb-70">
+            <div class="container">
+                <div class="section-title">
+                    <span class="sub-title">Amerikan Kültür</span>
+                    <h2>Referanslarımız</h2>
+                    <div class="container mb-5">
 
+                        <section class="customer-logos slider">
+                            @foreach($referans as $row)
+
+                                <div class="slide"><img src="{{$row["image"]}}"></div>
+                            @endforeach
+
+                        </section>
                     </div>
-                </div>
-                <div class="carousel-outer">
-                    <!--Sponsors Slider-->
-                    <ul class="sponsors-carousel owl-carousel owl-theme">
-                        @foreach($referans as $row)
-                            <li><div class="image-box"><a href="#"><img src="{{$row["image"]}}" alt=""></a></div></li>
-                        @endforeach
-
-                    </ul>
                 </div>
 
             </div>
         </section>
         @endif
     <!-- End Contact Map Section -->
+@endsection
+
+@section("script")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script>
+
+
+        $(document).ready(function(){
+            $('.customer-logos').slick({
+                slidesToShow: 6,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1500,
+                arrows: false,
+                dots: false,
+                pauseOnHover: false,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 4
+                    }
+                }, {
+                    breakpoint: 520,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                }]
+            });
+        });
+
+
+    </script>
+
+    <style>
+        h2{
+            text-align:center;
+            padding: 20px;
+        }
+        /* Slider */
+
+        .slick-slide {
+            margin: 0px 20px;
+        }
+
+        .slick-slide img {
+            width: 100%;
+        }
+
+        .slick-slider
+        {
+            position: relative;
+            display: block;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
+            -ms-touch-action: pan-y;
+            touch-action: pan-y;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .slick-list
+        {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        .slick-list:focus
+        {
+            outline: none;
+        }
+        .slick-list.dragging
+        {
+            cursor: pointer;
+            cursor: hand;
+        }
+
+        .slick-slider .slick-track,
+        .slick-slider .slick-list
+        {
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .slick-track
+        {
+            position: relative;
+            top: 0;
+            left: 0;
+            display: block;
+        }
+        .slick-track:before,
+        .slick-track:after
+        {
+            display: table;
+            content: '';
+        }
+        .slick-track:after
+        {
+            clear: both;
+        }
+        .slick-loading .slick-track
+        {
+            visibility: hidden;
+        }
+
+        .slick-slide
+        {
+            display: none;
+            float: left;
+            height: 100%;
+            min-height: 1px;
+        }
+        [dir='rtl'] .slick-slide
+        {
+            float: right;
+        }
+        .slick-slide img
+        {
+            display: block;
+        }
+        .slick-slide.slick-loading img
+        {
+            display: none;
+        }
+        .slick-slide.dragging img
+        {
+            pointer-events: none;
+        }
+        .slick-initialized .slick-slide
+        {
+            display: block;
+        }
+        .slick-loading .slick-slide
+        {
+            visibility: hidden;
+        }
+        .slick-vertical .slick-slide
+        {
+            display: block;
+            height: auto;
+            border: 1px solid transparent;
+        }
+        .slick-arrow.slick-hidden {
+            display: none;
+        }
+    </style>
+
 @endsection

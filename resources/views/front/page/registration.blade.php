@@ -4,15 +4,31 @@
 @endsection
 
 @section("content")
-
-    <section class="wizard-section pattern-layer-one page-title " style="background-color: #29235c" ;>
-        <div class="auto-container">
-            <h2>Ön Kayıt</h2>
-            <ul class="page-breadcrumb">
-                <li><a href="/">Anasayfa</a></li>
-                <li>Ön Kayıt</li>
-            </ul>
+    <div class="page-title-area title-bg-one"  >
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="title-item">
+                        <h2>Ön Kayıt</h2>
+                        <ul>
+                            <li>
+                                <a href="{{route("index")}}">Ana Sayfa</a>
+                            </li>
+                            <li>
+                                <span>Ön Kayıt</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="section-title mt-3 ">
+
+        <h2>Seviyenizi Test Edin</h2>
+    </div>
+    <section class="wizard-section pattern-layer-one page-title mt-5 mb-5 " style="background-color: #29235c" ;>
+
         <div class="row no-gutters">
 
             <div class="col-lg-6 col-md-6  offset-sm-2 offset-md-3 offset-lg-3 ">
@@ -245,7 +261,7 @@
                                 <input type="text" class="form-control wizard-required" name="captcha" placeholder="Görseldeki Metni Giriniz" id="captcha">
                                 <label for="captcha" class="wizard-form-text-label captcha"><span>{!! Captcha::img() !!}</span>
                                     <button type="button" id="refresh" class="btn btn-success"><i
-                                            class="fa fa-refresh"></i></button>*</label>
+                                            class="fas fa-sync"></i></button>*</label>
                                 <div class="wizard-form-error"></div>
                             </div>
                             <div class="form-group clearfix">
