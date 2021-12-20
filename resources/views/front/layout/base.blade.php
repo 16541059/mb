@@ -112,6 +112,11 @@
                                 <i class="icofont-instagram"></i>
                             </a>
                         </li>
+                        <li>
+                            <a href="https://wa.me/{{(isset(json_decode($aboutglb[0]["sosial"])->whatsapp)?(json_decode($aboutglb[0]["sosial"])->whatsapp):"")}}" target="_blank">
+                                <i class="icofont-whatsapp"></i>
+                            </a>
+                        </li>
                     </ul>
 
                 </div>

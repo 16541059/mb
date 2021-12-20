@@ -5,20 +5,36 @@
 
 @section("content")
 
-    <section class="wizard-section pattern-layer-one page-title " style="background-color: #141d38" ;>
-        <div class="auto-container">
-            <h2>SEVİYENİZİ BELİRLEYİN</h2>
-            <ul class="page-breadcrumb">
-                <li><a href="/">Anasayfa</a></li>
-                <li>Seviyenizi Belirleyin</li>
-            </ul>
+
+    <div class="page-title-area title-bg-one"  >
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="title-item">
+                        <h2>Seviyenizi Test Edin</h2>
+                        <ul>
+                            <li>
+                                <a href="{{route("index")}}">Ana Sayfa</a>
+                            </li>
+                            <li>
+                                <span>Seviyenizi Test Edin</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-6 col-md-6  offset-sm-2 offset-md-3 offset-lg-3 ">
+    </div>
+{{--    <div class="section-title mt-3 ">
+
+        <h2>Seviyenizi Test Edin</h2>
+    </div>--}}
+    <div class="row" style="background-image:linear-gradient(black, transparent 1%, black), url({{asset("front/img/akd.jpg")}});background-repeat: no-repeat;background-size:cover;  background-attachment: fixed;"  >
+        <div class="col-lg-6 col-md-6  offset-sm-2 offset-md-3 offset-lg-3 mb-5 mt-5 text-center" style="background-color: #29235c" >
             <div id="surveyElement" style="display:inline-block;width:100%; "></div>
             <div id="surveyResult"></div>
         </div>
-    </section>
-
+    </div>
 
 @endsection
 @section("script")

@@ -213,7 +213,7 @@
                 @foreach($sinav as $row )
                 <div class="col-sm-6 col-lg-3">
                     <div class="benefit-item">
-                        <i class="fas fa-feather-alt"></i>
+                        <img src="{{$row["image"]}}" style="border-radius:50%;width: 80px;height: 80px;line-height: 80px"  class="img-circle" alt="">
                         <h3>{{$row["name"]}}</h3>
                         <p>{!!  mb_substr(strip_tags($row["description"]) ,0,120)  !!}...</p>
                         <div class="img">

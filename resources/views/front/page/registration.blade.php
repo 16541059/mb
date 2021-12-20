@@ -23,15 +23,12 @@
             </div>
         </div>
     </div>
-    <div class="section-title mt-3 ">
 
-        <h2>Seviyenizi Test Edin</h2>
-    </div>
-    <section class="wizard-section pattern-layer-one page-title mt-5 mb-5 " style="background-color: #29235c" ;>
+    <section class="wizard-section pattern-layer-one page-title   " style="background-image:linear-gradient(black, transparent 1%, black), url({{asset("front/img/akd.jpg")}});background-repeat: no-repeat;background-size:cover;  background-attachment: fixed;" >
 
         <div class="row no-gutters">
 
-            <div class="col-lg-6 col-md-6  offset-sm-2 offset-md-3 offset-lg-3 ">
+            <div class="col-lg-6 col-md-6  offset-sm-2 offset-md-3 offset-lg-3 mt-5 mb-5  " style="background-color: #29235c">
                 <div class="form-wizard">
                     <form  id="registraitonform" action="{{route("registration.post")}}" method="post" role="form">
                         @csrf
