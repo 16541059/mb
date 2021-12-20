@@ -49,7 +49,7 @@
     <link rel="stylesheet" href="{{asset("front/css/responsive.css")}}">
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <title>@yield("title")</title>
-    <link rel="icon" type="image/png" href="{{asset("front/img/favicon.png")}}">
+    <link rel="icon" type="image/png" href="{{asset("front/img/favicon-32x32.png")}}">
 </head>
 
 <body>
@@ -66,11 +66,17 @@
 
 
 <div class="header-area">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-8">
                 <div class="left">
                     <ul>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <a href="#"> Çalışma
+                                Saateleri: {{(isset(json_decode($aboutglb[0]["sosial"])->day)?(json_decode($aboutglb[0]["sosial"])->day):"")}}
+                                {{(isset(json_decode($aboutglb[0]["sosial"])->time)?(json_decode($aboutglb[0]["sosial"])->time):"")}}</a>
+                        </li>
                         <li>
                             <i class="icofont-location-pin"></i>
                             <a href="#">{{(isset(json_decode($aboutglb[0]["sosial"])->adres)?(json_decode($aboutglb[0]["sosial"])->adres):"")}}</a>
@@ -86,7 +92,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="right">
                     <ul>
                         <li>
@@ -125,7 +131,18 @@
     </div>
 </div>
 
+<div class="nav">
+    <ul class="trigger">
+        <li><a href="https://wa.me/{{(isset(json_decode($aboutglb[0]["sosial"])->whatsapp)?(json_decode($aboutglb[0]["sosial"])->whatsapp):"")}}" class="menufont"> <i class="fab fa-whatsapp" > Whatsapp </i></a></li>
+        <li><a href="{{(isset(json_decode($aboutglb[0]["sosial"])->facebook)?(json_decode($aboutglb[0]["sosial"])->facebook):"")}}" class="menufont"> <i class="fab fa-facebook" > Facebook </i></a></li>
+        <li><a href="tel:{{(isset(json_decode($aboutglb[0]["sosial"])->tel)?(json_decode($aboutglb[0]["sosial"])->tel):"")}}" class="menufont"> <i class="fa fa-phone" > Telefon </i></a></li>
+        <li><a href="{{(isset(json_decode($aboutglb[0]["sosial"])->instagram)?(json_decode($aboutglb[0]["sosial"])->instagram):"")}}" class="menufont"> <i class="fab fa-instagram" > İnstagram </i></a></li>
+        <li><a href="{{(isset(json_decode($aboutglb[0]["sosial"])->youtube)?(json_decode($aboutglb[0]["sosial"])->youtube):"")}}" class="menufont"> <i class="fab fa-youtube" > Youtube </i></a></li>
+        <li><a href="{{(isset(json_decode($aboutglb[0]["sosial"])->twitter)?(json_decode($aboutglb[0]["sosial"])->twitter):"")}}" class="menufont"> <i class="fab fa-twitter" > Twitter </i></a></li>
 
+    </ul>
+    <button class="popup">İletişim</button>
+</div>
 <div class="navbar-area sticky-top">
 
     <div class="mobile-nav">
@@ -211,7 +228,56 @@
 </div>
 
 @yield("content")
+<div class="modal fade bd-example-modal-lg1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="privacymodal">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Çerezler</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {!! $privacglb[0]["cerez"] !!}
+            </div>
 
+        </div>
+    </div>
+</div>
+<div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="privacymodal">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Gizlilik Sözleşmesi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {!! $privacglb[0]["gizlilik"] !!}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Search Popup -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="privacymodal">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">KVKK Metni</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {!! $privacglb[0]["kvkk"] !!}
+            </div>
+        </div>
+    </div>
+</div>
 
 <footer class="footer-area pt-100">
     <div class="container">
@@ -313,6 +379,11 @@
                                     <i class="icofont-ui-email"></i>
                                     <a href="mailto:{{(isset(json_decode($aboutglb[0]["sosial"])->mail)?(json_decode($aboutglb[0]["sosial"])->mail):"")}}">{{(isset(json_decode($aboutglb[0]["sosial"])->mail)?(json_decode($aboutglb[0]["sosial"])->mail):"")}}</a>
                                 </li>
+                                <li><a data-toggle="modal" data-target=".bd-example-modal-lg">KVK Bilgilendirme Metni</a></li>
+                                <br>
+                                <li><a data-toggle="modal" data-target=".bd-example-modal-lg1">Çerez Politikası</a></li>
+                                <br>
+                                <li><a data-toggle="modal" data-target=".bd-example-modal-lg2">Gizlilik</a></li>
                             </ul>
                         </div>
                         <div class="contact-inner">
@@ -329,56 +400,7 @@
         </div>
     </div>
 </footer>
-<div class="modal fade bd-example-modal-lg1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content" id="privacymodal">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Çerezler</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                {!! $privacglb[0]["cerez"] !!}
-            </div>
 
-        </div>
-    </div>
-</div>
-<div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content" id="privacymodal">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Gizlilik Sözleşmesi</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                {!! $privacglb[0]["gizlilik"] !!}
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Search Popup -->
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content" id="privacymodal">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">KVKK Metni</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                {!! $privacglb[0]["kvkk"] !!}
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="go-top">
     <i class="icofont-arrow-up"></i>
@@ -413,9 +435,15 @@
 <script src="{{asset("front/js/jquery.nice-select.min.js")}}"></script>
 
 <script src="{{asset("front/js/custom.js")}}"></script>
-</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 @yield("script")
-{{--<script>
+
+</body>
+
+<script>
     var button = document.querySelector('.popup'),
         items = document.querySelectorAll('.trigger');
     var openCloseMenu = function() {
@@ -425,7 +453,7 @@
     }
     button.onclick = openCloseMenu;
 
-</script>--}}
+</script>
 </body>
 
 <!-- Mirrored from expert-themes.com/html/globex/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Nov 2021 08:12:51 GMT -->
@@ -525,7 +553,7 @@
     /* ADJUST MARGIN BOTTOM */
     ul.trigger {
         margin-left: 14px;
-        margin-bottom: -75px;
+        margin-bottom: -120px;
     }
     /* ADJUST MENU COLOR/SIZE/POSITION */
     button.popup {

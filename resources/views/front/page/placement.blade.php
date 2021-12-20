@@ -5,8 +5,8 @@
 
 @section("content")
 
-
-    <div class="page-title-area title-bg-one"  >
+<div style="background-image:linear-gradient(black, transparent 1%, black), url({{asset("front/img/akd.jpg")}});background-repeat: no-repeat;background-size:cover;  background-attachment: fixed;" >
+    <div class="page-title-area title-bg-two"   >
         <div class="d-table">
             <div class="d-table-cell">
                 <div class="container">
@@ -35,7 +35,7 @@
             <div id="surveyResult"></div>
         </div>
     </div>
-
+</div>
 @endsection
 @section("script")
     <script src="https://unpkg.com/jquery"></script>

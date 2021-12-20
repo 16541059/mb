@@ -1,14 +1,27 @@
 @extends("front.layout.base")
 @section("content")
-
-    <section class="error-section">
-        <div class="auto-container">
-            <div class="content">
-                <h1>404</h1>
-                <h2>Hata!  sayfa bulunamadı</h2>
-                <div class="text">Üzgünüz, aradığınız sayfa mevcut değil</div>
-                <a href="{{route("index")}}" class="theme-btn btn-style-three"><span class="txt">Ana Sayfaya Git</span></a>
+    <div class="loader">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="pre-box-one">
+                    <div class="pre-box-two"></div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+
+
+    <div class="error-area">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="error-item">
+                    <h1>404</h1>
+                    <h2>Hata!  sayfa bulunamadı</h2>
+                    <p>Üzgünüz, aradığınız sayfa mevcut değil</p>
+                    <a class="common-btn" href="{{route("index")}}">Ana Sayfaya Git</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection

@@ -4,7 +4,9 @@
 @endsection
 
 @section("content")
-    <div class="page-title-area title-bg-one"  >
+    <div style="background-image:linear-gradient(black, transparent 1%, black), url({{asset("front/img/akd.jpg")}});background-repeat: no-repeat;background-size:cover;  background-attachment: fixed;" >
+
+    <div class="page-title-area title-bg-two"  >
         <div class="d-table">
             <div class="d-table-cell">
                 <div class="container">
@@ -250,7 +252,7 @@
                             <div class="form-group">
                                 <div class="wizard-form-radio">
                                     <input name="kvkk"    id="radio29" type="checkbox">
-                                    <label for="radio29"> KVKK Sözleşmesini <a style="color: #00b44e" data-toggle="modal" data-target=".bd-example-modal-lg"> Okudum   </a> Onaylıyorum</label>
+                                    <label for="radio29"> KVKK Sözleşmesini  <a style="color: #00b44e" data-toggle="modal" data-target=".bd-example-modal-lg"> Okudum   </a> Onaylıyorum</label>
                                 </div>
 
                             </div>
@@ -272,7 +274,7 @@
             </div>
         </div>
     </section>
-
+    </div>
 @endsection
 @section("script")
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
