@@ -17,7 +17,7 @@
     $color ="#29235c"
 @endphp
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="tr">
 
 <head>
     <meta charset="UTF-8">
@@ -396,7 +396,7 @@
             </div>
         </div>
         <div class="copyright-area">
-            <p>Copyright &copy; 2020 Tüm hakları İngiliz Kültüre aittir. Designed By <a href="https://areswebtasarim.com" target="_blank">Ares Web Tasarım</a></p>
+            <p>Copyright &copy; 2021 Tüm hakları Amerikan Kültüre aittir. Designed By <a href="https://areswebtasarim.com" target="_blank">Ares Web Tasarım</a></p>
         </div>
     </div>
 </footer>

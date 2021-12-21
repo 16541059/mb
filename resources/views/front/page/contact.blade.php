@@ -73,7 +73,7 @@
                                 <i class="icofont-user-alt-3"></i>
                             </label>
                             <input type="text" name="name" id="name" class="form-control" placeholder="Adınız" required
-                                   data-error="Please enter your name">
+                                   data-error="Lütfen adınızı giriniz">
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                                 <i class="icofont-ui-email"></i>
                             </label>
                             <input type="email" name="email" id="email" class="form-control"
-                                   placeholder="E-posta adresiniz" required data-error="Please enter your email">
+                                   placeholder="E-posta adresiniz" required data-error="Lütfen E-postanızı girin">
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                                 <i class="icofont-ui-call"></i>
                             </label>
                             <input type="text" name="tel" id="phone_number" placeholder="Telefon Numaranız" required
-                                   data-error="Please enter your number" class="form-control">
+                                   data-error="Lütfen numaranızı giriniz" class="form-control">
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
@@ -104,7 +104,7 @@
                                 <i class="icofont-notepad"></i>
                             </label>
                             <input type="text" name="subject" id="msg_subject" class="form-control" placeholder="Konu"
-                                   required data-error="Please enter your subject">
+                                   required data-error="Lütfen konunuzu girin">
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
                             </label>
                             <textarea name="message" class="form-control" id="message" cols="30" rows="8"
                                       placeholder="Mesajınız yazınız" required
-                                      data-error="Write your message"></textarea>
+                                      data-error="Mesajınızı yazın"></textarea>
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
@@ -131,7 +131,7 @@
                                 <div class="p-2 bd-highlight"><input type="text" id="captcha" name="captcha"
                                                                      class="form-control"
                                                                      placeholder="" style="height: 40px" required
-                                                                     data-error="Please enter your captcha"></div>
+                                                                     data-error="Lütfen görseldeki metni girin></div>
 
                             </div>
                             <div class="help-block with-errors">

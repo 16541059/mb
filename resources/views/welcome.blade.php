@@ -115,7 +115,10 @@
         @endif
 
 
+    <div class="container-fluid" style="background-color: {{$redcolor}}">
 
+        <br>
+    </div>
     <div class="feature-area pt-100 pb-70" style="background-color: #ffffff">
         <div class="container">
             <div class="row">
@@ -146,8 +149,12 @@
     </div>
 
     @if(!empty($egitim))
-    <section class="donations-area   three pt-100 pb-70">
-        <div class="container">
+        <div class="container-fluid" style="background-color: {{$color}}">
+
+            <br>
+        </div>
+        <section class="donations-area   three pt-100 pb-70 mb-5 "   >
+        <div class="container" >
             <div class="section-title">
                 <span class="sub-title"></span>
                 <h2>Eğitimlerimiz</h2>
@@ -202,7 +209,7 @@
 
     @if(!empty($sinavingilizcesi))
 
-    <div class="benefit-area container three pt-100 pb-70">
+    <div class="benefit-area container three pt-100 pb-70" >
         <div class="container">
             <div class="section-title">
 
@@ -279,7 +286,7 @@
         <div class="container">
             <div class="section-title">
                 <span class="sub-title">Amerikan Kültür</span>
-                <h2>Fotoğran Galerisi</h2>
+                <h2>Fotoğraf Galerisi</h2>
 
             </div>
             <div class="row">
