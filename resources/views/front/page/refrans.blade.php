@@ -30,7 +30,7 @@
         <div class="container">
             <div class="row">
                 @foreach($data  as $row)
-                    <div class="col-sm-6 col-lg-4">
+                    <div class="col-sm-3 col-lg-2">
                         <div class="gallery-item">
                             <a href="{{$row["image"]}}" data-lightbox="roadtrip">
                                 <img src="{{$row["image"]}}" alt="Gallery">
