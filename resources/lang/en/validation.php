@@ -100,10 +100,13 @@ return [
     'numeric' => 'The :attribute must be a number.',
     'password' => 'The password is incorrect.',
     'present' => 'The :attribute field must be present.',
+<<<<<<< HEAD
     'prohibited' => 'The :attribute field is prohibited.',
     'prohibited_if' => 'The :attribute field is prohibited when :other is :value.',
     'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
     'prohibits' => 'The :attribute field prohibits :other from being present.',
+=======
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
     'regex' => 'The :attribute format is invalid.',
     'required' => 'The :attribute field is required.',
     'required_if' => 'The :attribute field is required when :other is :value.',
@@ -112,6 +115,13 @@ return [
     'required_with_all' => 'The :attribute field is required when :values are present.',
     'required_without' => 'The :attribute field is required when :values is not present.',
     'required_without_all' => 'The :attribute field is required when none of :values are present.',
+<<<<<<< HEAD
+=======
+    'prohibited' => 'The :attribute field is prohibited.',
+    'prohibited_if' => 'The :attribute field is prohibited when :other is :value.',
+    'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
+    'prohibits' => 'The :attribute field prohibits :other from being present.',
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
     'same' => 'The :attribute and :other must match.',
     'size' => [
         'numeric' => 'The :attribute must be :size.',

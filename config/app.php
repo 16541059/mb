@@ -13,7 +13,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'name' => env('APP_NAME', 'Laravel'),
+=======
+    'name' => env('APP_NAME', 'İngiliz_Kültür'),
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
 
     /*
     |--------------------------------------------------------------------------
@@ -67,7 +71,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'timezone' => 'UTC',
+=======
+    'timezone' => 'Europe/Istanbul',
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +88,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'locale' => 'en',
+=======
+    'locale' => 'tr',
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
 
     /*
     |--------------------------------------------------------------------------
@@ -106,7 +118,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'faker_locale' => 'en_US',
+=======
+    'faker_locale' => 'tr_TR.utf8',
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
 
     /*
     |--------------------------------------------------------------------------
@@ -161,6 +177,11 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+<<<<<<< HEAD
+=======
+        Collective\Html\HtmlServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
 
         /*
          * Package Service Providers...
@@ -176,6 +197,10 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
+<<<<<<< HEAD
+=======
+        Mews\Captcha\CaptchaServiceProvider::class,
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
 
     ],
 
@@ -231,7 +256,14 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+<<<<<<< HEAD
 
+=======
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
     ],
 
 ];

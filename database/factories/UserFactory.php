@@ -25,8 +25,18 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
+<<<<<<< HEAD
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
+=======
+            'name' => "Admin",
+            'tc'=>"1111111111",
+            'level'=>'A1',
+            'tel'=>'5555',
+            'slug'=>"admin",
+            'authority'=>1,
+            'email' => "admin@admin.com",
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),

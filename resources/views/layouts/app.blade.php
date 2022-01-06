@@ -23,7 +23,10 @@
 
         <div class="min-h-screen bg-gray-100">
             @livewire('navigation-menu')
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">

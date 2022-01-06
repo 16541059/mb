@@ -1,10 +1,18 @@
 <x-jet-form-section submit="updatePassword">
     <x-slot name="title">
+<<<<<<< HEAD
         {{ __('Update Password') }}
     </x-slot>
 
     <x-slot name="description">
         {{ __('Ensure your account is using a long, random password to stay secure.') }}
+=======
+        {{ __('Şifre güncelle') }}
+    </x-slot>
+
+    <x-slot name="description">
+        {{ __('Güvende kalmak için hesabınızın uzun, rastgele bir şifre kullandığından emin olun.') }}
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
     </x-slot>
 
     <x-slot name="form">

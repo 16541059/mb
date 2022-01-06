@@ -11,7 +11,11 @@ class Kernel extends HttpKernel
      *
      * These middleware are run during every request to your application.
      *
+<<<<<<< HEAD
      * @var array<int, class-string|string>
+=======
+     * @var array
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
      */
     protected $middleware = [
         // \App\Http\Middleware\TrustHosts::class,
@@ -26,7 +30,11 @@ class Kernel extends HttpKernel
     /**
      * The application's route middleware groups.
      *
+<<<<<<< HEAD
      * @var array<string, array<int, class-string|string>>
+=======
+     * @var array
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
      */
     protected $middlewareGroups = [
         'web' => [
@@ -51,7 +59,11 @@ class Kernel extends HttpKernel
      *
      * These middleware may be assigned to groups or used individually.
      *
+<<<<<<< HEAD
      * @var array<string, class-string|string>
+=======
+     * @var array
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
      */
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
@@ -63,5 +75,10 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+<<<<<<< HEAD
+=======
+        'authority' => \App\Http\Middleware\Authority::class,
+        'userauthority'=>\App\Http\Middleware\UserAuthority::class,
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
     ];
 }

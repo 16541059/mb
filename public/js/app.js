@@ -1463,11 +1463,14 @@ function onMutate(mutations) {
   addedAttributes.forEach((attrs, el) => {
     onAttributeAddeds.forEach((i) => i(el, attrs));
   });
+<<<<<<< HEAD
   for (let node of removedNodes) {
     if (addedNodes.includes(node))
       continue;
     onElRemoveds.forEach((i) => i(node));
   }
+=======
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
   addedNodes.forEach((node) => {
     node._x_ignoreSelf = true;
     node._x_ignore = true;
@@ -1475,8 +1478,11 @@ function onMutate(mutations) {
   for (let node of addedNodes) {
     if (removedNodes.includes(node))
       continue;
+<<<<<<< HEAD
     if (!node.isConnected)
       continue;
+=======
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
     delete node._x_ignoreSelf;
     delete node._x_ignore;
     onElAddeds.forEach((i) => i(node));
@@ -1487,6 +1493,14 @@ function onMutate(mutations) {
     delete node._x_ignoreSelf;
     delete node._x_ignore;
   });
+<<<<<<< HEAD
+=======
+  for (let node of removedNodes) {
+    if (addedNodes.includes(node))
+      continue;
+    onElRemoveds.forEach((i) => i(node));
+  }
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
   addedNodes = null;
   removedNodes = null;
   addedAttributes = null;
@@ -1861,7 +1875,10 @@ var directiveOrder = [
   "ignore",
   "ref",
   "data",
+<<<<<<< HEAD
   "id",
+=======
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
   "bind",
   "init",
   "for",
@@ -1870,7 +1887,10 @@ var directiveOrder = [
   "show",
   "if",
   DEFAULT,
+<<<<<<< HEAD
   "teleport",
+=======
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
   "element"
 ];
 function byPriority(a, b) {
@@ -1939,7 +1959,11 @@ function start() {
   dispatch(document, "alpine:initializing");
   startObservingMutations();
   onElAdded((el) => initTree(el, walk));
+<<<<<<< HEAD
   onElRemoved((el) => destroyTree(el));
+=======
+  onElRemoved((el) => nextTick(() => destroyTree(el)));
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
   onAttributesAdded((el, attrs) => {
     directives(el, attrs).forEach((handle) => handle());
   });
@@ -1964,6 +1988,7 @@ function addInitSelector(selectorCallback) {
   initSelectorCallbacks.push(selectorCallback);
 }
 function closestRoot(el, includeInitSelectors = false) {
+<<<<<<< HEAD
   return findClosest(el, (element) => {
     const selectors = includeInitSelectors ? allSelectors() : rootSelectors();
     if (selectors.some((selector) => element.matches(selector)))
@@ -1980,6 +2005,16 @@ function findClosest(el, callback) {
   if (!el.parentElement)
     return;
   return findClosest(el.parentElement, callback);
+=======
+  if (!el)
+    return;
+  const selectors = includeInitSelectors ? allSelectors() : rootSelectors();
+  if (selectors.some((selector) => el.matches(selector)))
+    return el;
+  if (!el.parentElement)
+    return;
+  return closestRoot(el.parentElement, includeInitSelectors);
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
 }
 function isRoot(el) {
   return rootSelectors().some((selector) => el.matches(selector));
@@ -2069,7 +2104,11 @@ function setStylesFromString(el, value) {
   let cache = el.getAttribute("style", value);
   el.setAttribute("style", value);
   return () => {
+<<<<<<< HEAD
     el.setAttribute("style", cache || "");
+=======
+    el.setAttribute("style", cache);
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
   };
 }
 function kebabCase(subject) {
@@ -2491,15 +2530,22 @@ var Alpine = {
   get raw() {
     return raw;
   },
+<<<<<<< HEAD
   version: "3.7.1",
+=======
+  version: "3.5.2",
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
   flushAndStopDeferringMutations,
   disableEffectScheduling,
   setReactivityEngine,
   closestDataStack,
   skipDuringClone,
   addRootSelector,
+<<<<<<< HEAD
   addInitSelector,
   addScopeToNode,
+=======
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
   deferMutations,
   mapAttributes,
   evaluateLater,
@@ -2516,7 +2562,10 @@ var Alpine = {
   evaluate,
   initTree,
   nextTick,
+<<<<<<< HEAD
   prefixed: prefix,
+=======
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
   prefix: setPrefix,
   plugin,
   magic,
@@ -2542,7 +2591,12 @@ magic("watch", (el) => (key, callback) => {
   let firstTime = true;
   let oldValue;
   effect(() => evaluate2((value) => {
+<<<<<<< HEAD
     JSON.stringify(value);
+=======
+    let div = document.createElement("div");
+    div.dataset.throwAway = value;
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
     if (!firstTime) {
       queueMicrotask(() => {
         callback(value, oldValue);
@@ -2584,6 +2638,7 @@ function getArrayOfRefObject(el) {
   return refObjects;
 }
 
+<<<<<<< HEAD
 // packages/alpinejs/src/ids.js
 var globalIdMemo = {};
 function findAndIncrementId(name) {
@@ -2649,6 +2704,11 @@ directive("teleport", (el, {expression}, {cleanup}) => {
   cleanup(() => clone2.remove());
 });
 
+=======
+// packages/alpinejs/src/magics/$el.js
+magic("el", (el) => el);
+
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
 // packages/alpinejs/src/directives/x-ignore.js
 var handler = () => {
 };
@@ -3066,6 +3126,12 @@ function applyBindingsObject(el, expression, original, effect3) {
       cleanupRunners.pop()();
     getBindings((bindings) => {
       let attributes = Object.entries(bindings).map(([name, value]) => ({name, value}));
+<<<<<<< HEAD
+=======
+      attributes = attributes.filter((attr) => {
+        return !(typeof attr.value === "object" && !Array.isArray(attr.value) && attr.value !== null);
+      });
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
       let staticAttributes = attributesOnly(attributes);
       attributes = attributes.map((attribute) => {
         if (staticAttributes.find((attr) => attr.name === attribute.name)) {
@@ -3227,9 +3293,13 @@ function loop(el, iteratorNames, evaluateItems, evaluateKey) {
       mutateDom(() => {
         elForSpot.after(marker);
         elInSpot.after(elForSpot);
+<<<<<<< HEAD
         elForSpot._x_currentIfEl && elForSpot.after(elForSpot._x_currentIfEl);
         marker.before(elInSpot);
         elInSpot._x_currentIfEl && elInSpot.after(elInSpot._x_currentIfEl);
+=======
+        marker.before(elInSpot);
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
         marker.remove();
       });
       refreshScope(elForSpot, scopes[keys.indexOf(keyForSpot)]);
@@ -3237,8 +3307,11 @@ function loop(el, iteratorNames, evaluateItems, evaluateKey) {
     for (let i = 0; i < adds.length; i++) {
       let [lastKey2, index] = adds[i];
       let lastEl = lastKey2 === "template" ? templateEl : lookup[lastKey2];
+<<<<<<< HEAD
       if (lastEl._x_currentIfEl)
         lastEl = lastEl._x_currentIfEl;
+=======
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
       let scope = scopes[index];
       let key = keys[index];
       let clone2 = document.importNode(templateEl.content, true).firstElementChild;
@@ -3348,23 +3421,29 @@ directive("if", (el, {expression}, {effect: effect3, cleanup}) => {
   cleanup(() => el._x_undoIf && el._x_undoIf());
 });
 
+<<<<<<< HEAD
 // packages/alpinejs/src/directives/x-id.js
 directive("id", (el, {expression}, {evaluate: evaluate2}) => {
   let names = evaluate2(expression);
   names.forEach((name) => setIdRoot(el, name));
 });
 
+=======
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
 // packages/alpinejs/src/directives/x-on.js
 mapAttributes(startingWith("@", into(prefix("on:"))));
 directive("on", skipDuringClone((el, {value, modifiers, expression}, {cleanup}) => {
   let evaluate2 = expression ? evaluateLater(el, expression) : () => {
   };
+<<<<<<< HEAD
   if (el.tagName.toLowerCase() === "template") {
     if (!el._x_forwardEvents)
       el._x_forwardEvents = [];
     if (!el._x_forwardEvents.includes(value))
       el._x_forwardEvents.push(value);
   }
+=======
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
   let removeListener = on(el, value, modifiers, (e) => {
     evaluate2(() => {
     }, {scope: {$event: e}, params: [e]});
@@ -22911,7 +22990,11 @@ process.umask = function() { return 0; };
 /***/ ((module) => {
 
 "use strict";
+<<<<<<< HEAD
 module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"range","registry":true,"raw":"axios@^0.21","name":"axios","escapedName":"axios","rawSpec":"^0.21","saveSpec":null,"fetchSpec":"^0.21"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_shasum":"c67b90dc0568e5c1cf2b0b858c43ba28e2eda575","_spec":"axios@^0.21","_where":"C:\\\\Users\\\\MarkalarBirligi\\\\PhpstormProjects\\\\mb","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundleDependencies":false,"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"deprecated":false,"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
+=======
+module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
 
 /***/ })
 

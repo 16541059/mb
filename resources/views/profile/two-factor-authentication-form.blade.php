@@ -1,24 +1,42 @@
 <x-jet-action-section>
     <x-slot name="title">
+<<<<<<< HEAD
         {{ __('Two Factor Authentication') }}
     </x-slot>
 
     <x-slot name="description">
         {{ __('Add additional security to your account using two factor authentication.') }}
+=======
+        {{ __('İki Faktörlü Kimlik Doğrulama') }}
+    </x-slot>
+
+    <x-slot name="description">
+        {{ __('İki faktörlü kimlik doğrulamayı kullanarak hesabınıza ek güvenlik ekleyin.') }}
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
     </x-slot>
 
     <x-slot name="content">
         <h3 class="text-lg font-medium text-gray-900">
             @if ($this->enabled)
+<<<<<<< HEAD
                 {{ __('You have enabled two factor authentication.') }}
             @else
                 {{ __('You have not enabled two factor authentication.') }}
+=======
+                {{ __('İki faktörlü kimlik doğrulamayı etkinleştirdiniz.') }}
+            @else
+                {{ __('İki faktörlü kimlik doğrulamayı etkinleştirmediniz..') }}
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
             @endif
         </h3>
 
         <div class="mt-3 max-w-xl text-sm text-gray-600">
             <p>
+<<<<<<< HEAD
                 {{ __('When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone\'s Google Authenticator application.') }}
+=======
+                {{ __('İki faktörlü kimlik doğrulama etkinleştirildiğinde, kimlik doğrulama sırasında güvenli, rastgele bir jeton istenir.  Bu jetonu telefonunuzun Google Authenticator uygulamasından alabilirsiniz.') }}
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
             </p>
         </div>
 

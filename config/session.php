@@ -128,7 +128,11 @@ return [
 
     'cookie' => env(
         'SESSION_COOKIE',
+<<<<<<< HEAD
         Str::slug(env('APP_NAME', 'laravel'), '_').'_session'
+=======
+        Str::slug(env('APP_NAME', 'ingiliz-kulutur'), '_').'_session'
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
     ),
 
     /*
