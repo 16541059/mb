@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="52467a3a-9eaf-403c-b583-d3b65fc1be10" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/CampingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/CampingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/adminlte.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/adminlte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back/about.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back/settings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back/settings.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="22Me0SgSgyo80sj4jHN4gVQONia" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/front/img" />
+      <recent name="$PROJECT_DIR$/public/front" />
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="52467a3a-9eaf-403c-b583-d3b65fc1be10" name="Changes" comment="" />
+      <created>1639651659855</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1639651659855</updated>
+      <workItem from="1639651661183" duration="13902000" />
+      <workItem from="1639667305080" duration="246000" />
+      <workItem from="1639720800131" duration="16263000" />
+      <workItem from="1639807071362" duration="24799000" />
+      <workItem from="1639981663675" duration="20246000" />
+      <workItem from="1640068149542" duration="8491000" />
+      <workItem from="1640092045417" duration="2088000" />
+      <workItem from="1640159753077" duration="1879000" />
+      <workItem from="1640329462744" duration="2385000" />
+      <workItem from="1640414354349" duration="8735000" />
+      <workItem from="1640608990636" duration="2543000" />
+      <workItem from="1640674505742" duration="1655000" />
+      <workItem from="1640782839030" duration="434000" />
+      <workItem from="1640856283853" duration="1268000" />
+      <workItem from="1640937122117" duration="7356000" />
+      <workItem from="1641019570263" duration="11913000" />
+      <workItem from="1641206569310" duration="2452000" />
+      <workItem from="1641278183888" duration="1068000" />
+      <workItem from="1641376697649" duration="1871000" />
+      <workItem from="1641469239470" duration="1725000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

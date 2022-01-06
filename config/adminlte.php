@@ -351,7 +351,6 @@ return [
                     'icon'=>'fas fa-angle-right',
                 ],
 
-
             ],
         ],
         [
@@ -432,9 +431,15 @@ return [
             ],
         ],
         [
-            'text'    => 'Site Ayarıları',
+            'text'    => 'Site Ayarları',
             'icon'    => 'fas fa-cog',
             'submenu' => [
+                [
+                    'text'        => 'Site Ayarları',
+                    'route'       => 'admin.settings.index',
+                    'icon'=>'fas fa-angle-right',
+                    'label_color' => 'success',
+                ],
                 [
                     'text'        => 'Popup Ayarları',
                     'route'         => 'admin.popup.index',

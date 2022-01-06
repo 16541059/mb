@@ -11,7 +11,8 @@ use Illuminate\Http\Request;
 class CampingController extends Controller
 {
     public function index(){
-        $datetime = Carbon::now('Europe/Istanbul');
+
+
         $language=Campaign::paginate(24);
         return view("front.page.campaing",["data"=>$language,"datetime"=>$datetime]);
 

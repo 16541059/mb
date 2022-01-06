@@ -192,6 +192,13 @@ Route::middleware(['auth:sanctum', 'authority'])->namespace("App\Http\Controller
             Route::post('/put/{id}', 'AboutController@put')->name('put');
         } );
         /* About ---------------------------------------------------------------------------------------- */
+    /* About ---------------------------------------------------------------------------------------- */
+    Route::prefix("settings")->as("settings.")->group(function (){
+        Route::get('/', 'SettingsController@index')->name('index');
+        Route::get('/delete/{id}', 'SettingsController@delete')->name('delete');
+        Route::post('/put/{id}', 'SettingsController@put')->name('put');
+    } );
+    /* About ---------------------------------------------------------------------------------------- */
         /* Refarans ---------------------------------------------------------------------------------------- */
         Route::prefix("whyus")->as("whyus.")->group(function (){
             Route::get('/', 'WhyusController@index')->name('index');
