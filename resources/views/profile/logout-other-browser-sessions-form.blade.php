@@ -1,15 +1,27 @@
 <x-jet-action-section>
     <x-slot name="title">
+<<<<<<< HEAD
+        {{ __('Browser Sessions') }}
+    </x-slot>
+
+    <x-slot name="description">
+        {{ __('Manage and log out your active sessions on other browsers and devices.') }}
+=======
         {{ __('Tarayıcı Oturumları') }}
     </x-slot>
 
     <x-slot name="description">
         {{ __('Diğer tarayıcılarda ve cihazlarda etkin oturumlarınızı yönetin ve oturumunuzu kapatın.') }}
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
     </x-slot>
 
     <x-slot name="content">
         <div class="max-w-xl text-sm text-gray-600">
+<<<<<<< HEAD
+            {{ __('If necessary, you may log out of all of your other browser sessions across all of your devices. Some of your recent sessions are listed below; however, this list may not be exhaustive. If you feel your account has been compromised, you should also update your password.') }}
+=======
             {{ __('Gerekirse, tüm cihazlarınızdaki diğer tüm tarayıcı oturumlarınızdan çıkış yapabilirsiniz.  Son seanslarınızdan bazıları aşağıda listelenmiştir;  ancak, bu liste ayrıntılı olmayabilir.  Hesabınızın güvenliğinin ihlal edildiğini düşünüyorsanız, şifrenizi de güncellemelisiniz.') }}
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
         </div>
 
         @if (count($this->sessions) > 0)

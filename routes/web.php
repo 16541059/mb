@@ -12,6 +12,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+<<<<<<< HEAD
+Route::get('/',[\App\Http\Controllers\FrontController::class,'index'])->name('index');
+
+Route::get('/about',[\App\Http\Controllers\FrontController::class,'about'])->name('about');
+Route::get('/brands',[\App\Http\Controllers\FrontController::class,'brands'])->name('brands');
+Route::get('/franchise',[\App\Http\Controllers\FrontController::class,'franchise'])->name('franchise');
+Route::get('/contact',[\App\Http\Controllers\FrontController::class,'contact'])->name('contact');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+=======
 
 ;
 Route::middleware(['auth:sanctum', 'userauthority'])->namespace("App\Http\Controllers\User")->prefix("users")->as("users.")->group(function (){
@@ -349,3 +362,4 @@ Route::middleware(['auth:sanctum', 'authority'])->namespace("App\Http\Controller
     /* Admin Ekleme  rotue------------------------------------------------------------------------------------ */
 
 });
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff

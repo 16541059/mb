@@ -4,6 +4,18 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
+<<<<<<< HEAD
+                <div class="shrink-0 flex items-center">
+                    <a href="{{ route('dashboard') }}">
+                        <x-jet-application-mark class="block h-9 w-auto" />
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Dashboard') }}
+=======
                 <div class="flex-shrink-0 flex items-center">
                    {{-- <a href="">
                         <x-jet-application-mark class="block h-9 w-auto" />
@@ -14,6 +26,7 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10  sm:flex">
                     <x-jet-nav-link href="{{(Auth::user()->authority==1)?'/admin/dashboard':'/users'}}" :active="request()->routeIs('dashboard')">
                         {{ __('Anasayfa') }}
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
                     </x-jet-nav-link>
                 </div>
             </div>
@@ -138,7 +151,11 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
+<<<<<<< HEAD
+            <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+=======
             <x-jet-responsive-nav-link href="" :active="request()->routeIs('dashboard')">
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
         </div>
@@ -147,7 +164,11 @@
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="flex items-center px-4">
                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+<<<<<<< HEAD
+                    <div class="shrink-0 mr-3">
+=======
                     <div class="flex-shrink-0 mr-3">
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
                         <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                     </div>
                 @endif

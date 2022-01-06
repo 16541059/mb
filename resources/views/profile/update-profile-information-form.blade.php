@@ -1,10 +1,18 @@
 <x-jet-form-section submit="updateProfileInformation">
     <x-slot name="title">
+<<<<<<< HEAD
+        {{ __('Profile Information') }}
+    </x-slot>
+
+    <x-slot name="description">
+        {{ __('Update your account\'s profile information and email address.') }}
+=======
         {{ __('Profil Bilgisi') }}
     </x-slot>
 
     <x-slot name="description">
         {{ __('Hesabınızın profil bilgilerini ve e-posta adresini güncelleyin.') }}
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
     </x-slot>
 
     <x-slot name="form">

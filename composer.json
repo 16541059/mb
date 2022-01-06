@@ -8,6 +8,13 @@
         "php": "^7.3|^8.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+<<<<<<< HEAD
+        "laravel/framework": "^8.65",
+        "laravel/jetstream": "^2.5",
+        "laravel/sanctum": "^2.11",
+        "laravel/tinker": "^2.5",
+        "livewire/livewire": "^2.5"
+=======
         "intervention/image": "^2.7",
         "jeroennoten/laravel-adminlte": "^3.7",
         "laravel/framework": "^8.65",
@@ -17,6 +24,7 @@
         "laravelcollective/html": "^6.2",
         "livewire/livewire": "^2.5",
         "mews/captcha": "^3.2"
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -44,7 +52,11 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
+<<<<<<< HEAD
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+=======
             "@php artisan vendor:publish --tag=laravel-assets --ansi"
+>>>>>>> 9caac8dc45f3eaa383ea36ec2e8ec22d6f74fbff
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
